@@ -107,7 +107,8 @@ inline check_policy(_res, channel_id, user_id, right_id){
                 if
                     :: (Policies[i].id == -1) -> break;
                     :: (Policies[i].banned == true) -> goto NEXTPOLICY_1;
-                    :: (Policies[i].resource.id != 2) -> break;
+                    // TODO: Add all constrants poilcy
+                    :: (Policies[i].resource.id != 2 && Policies[i].resource.id != 3 && Policies[i].resource.id != 6) -> break;
                     :: else -> skip;
                 fi;
                 // check channel_id in the channel list
@@ -282,7 +283,7 @@ inline Yunmai_smart_scale_GUESTMODE(user_id, device_id, action){
             ::  (check_policy_result == true) -> 
                 if
                     :: (action == true) ->
-                        printf("'Yunmai_smart_scale': user_%d open the Guest Model of \n", user_id);
+                        printf("'Yunmai_smart_scale': user_%d open the Guest Model\n", user_id);
                         // Policy	data[Client]	[MiHome]	[other users]	None
                         Policies[PolicyNum].id = PolicyNum;
                         Policies[PolicyNum].resource.id = 0;
@@ -339,6 +340,202 @@ inline Yunmai_smart_scale_REVOKE(user_A, user_B, device_id){
         fi;
     }
 }
+
+/******************** Philips Hue bridge *************************/
+// Share（Client_A→ Client_B）with “Share Wi-Fi”
+inline Philips_bridge_SHARE(user_A, user_B, device_id){
+    atomic{
+        printf("'Philips_bridge': Share (user_%d → user_%d) with 'Share Wi-Fi' in 'Philips Hue app'\n", user_A, user_B);
+ 
+        // Policy	SubDeviceList; sub_device_state	[(Local)Philips app]	[Client_B]	[View, Control]
+        Devices[device_id].canBeRevoked[0].id = PolicyNum;    
+        Policies[PolicyNum].id = PolicyNum;
+        Policies[PolicyNum].resource.id = 4;
+        Policies[PolicyNum].chans[0].id = 2;
+        Policies[PolicyNum].subs[0].id = user_B;
+        Policies[PolicyNum].rights[0].id = 0;
+        Policies[PolicyNum].rights[1].id = 1;
+        Policies[PolicyNum].rights[2].id = 2;
+        PolicyNum = PolicyNum + 1;        
+
+        Devices[device_id].canBeRevoked[1].id = PolicyNum;    
+        Policies[PolicyNum].id = PolicyNum;
+        Policies[PolicyNum].resource.id = 5;
+        Policies[PolicyNum].chans[0].id = 2;
+        Policies[PolicyNum].subs[0].id = user_B;
+        Policies[PolicyNum].rights[0].id = 0;
+        Policies[PolicyNum].rights[1].id = 1;
+        Policies[PolicyNum].rights[2].id = 2;
+        PolicyNum = PolicyNum + 1;    
+
+        // Policy-x	Constraints	[(Local)Philips app——remote control]	[Client_B]	[Control]
+        Devices[device_id].canBeRevoked[2].id = PolicyNum;
+        Policies[PolicyNum].id = PolicyNum;
+        Policies[PolicyNum].resource.id = 5;
+        Policies[PolicyNum].chans[0].id = 3;
+        Policies[PolicyNum].subs[0].id = user_B;
+        Policies[PolicyNum].rights[0].id = 1;
+        Policies[PolicyNum].rights[1].id = 2;
+        PolicyNum = PolicyNum + 1;         
+
+    }
+}
+
+//Remote Control On (Client)
+inline Philips_bridge_REMOTECONTROl_ON(user_id, device_id){
+    atomic{
+        check_policy_result = false;
+        // {resource:, channel_id:"(Local)Philips app——remote control", user_id:user_id, right_id:}
+        res_need_check.id = -1;
+        check_policy(res_need_check, 3, user_id, -1)
+        if
+            ::  (check_policy_result == true) -> 
+                printf("'Philips_bridge': user_%d open the Remote Control\n", user_id);
+                // Policy	sub_device_state	[(Remote)Philips app]	[Client]	[View, Control]
+                Policies[PolicyNum].id = PolicyNum;
+                Policies[PolicyNum].resource.id = 5;
+                Policies[PolicyNum].chans[0].id = 4;
+                Policies[PolicyNum].subs[0].id = user_id;
+                Policies[PolicyNum].rights[0].id = 0;
+                Policies[PolicyNum].rights[1].id = 1;
+                Policies[PolicyNum].rights[2].id = 2;
+                PolicyNum = PolicyNum + 1;     
+
+                // Policy	AccessList-—(Remote)Philips app)—[user]	[(Remote)Philips app]	[Client]	[View, Control]
+                Policies[PolicyNum].id = PolicyNum;
+                Policies[PolicyNum].resource.id = 1;
+                Policies[PolicyNum].chans[0].id = 4;
+                Policies[PolicyNum].subs[0].id = user_id;
+                Policies[PolicyNum].rights[0].id = 0;
+                Policies[PolicyNum].rights[1].id = 1;
+                Policies[PolicyNum].rights[2].id = 2;
+                PolicyNum = PolicyNum + 1;                                  
+            :: else -> skip
+        fi;
+    }
+}
+
+
+/******************** Aqara hub *************************/
+// Share（Client_A→ Client_B）in “MiHome app” using “member” role
+inline Aqara_hub_SHARE(user_A, user_B, device_id){
+    atomic{
+        printf("'Aqara hub': Share (user_%d → user_%d) in 'MiHome app' using 'member' role \n", user_A, user_B);
+                   
+        // Policy	SubDeviceList	[MiHome]	[Client_B]	[View, Control]
+        Devices[device_id].canBeRevoked[0].id = PolicyNum;  
+        Policies[PolicyNum].id = PolicyNum;
+        Policies[PolicyNum].resource.id = 4;
+        Policies[PolicyNum].chans[0].id = 0;
+        Policies[PolicyNum].subs[0].id = user_B;
+        Policies[PolicyNum].rights[0].id = 0;
+        Policies[PolicyNum].rights[1].id = 1;
+        Policies[PolicyNum].rights[2].id = 2;
+        PolicyNum = PolicyNum + 1;
+        
+        
+        // Policy	sub_device_state	[MiHome]	[Client_B]	[View, Control]
+        Devices[device_id].canBeRevoked[1].id = PolicyNum;  
+        Policies[PolicyNum].id = PolicyNum;
+        Policies[PolicyNum].resource.id = 5;
+        Policies[PolicyNum].chans[0].id = 0;
+        Policies[PolicyNum].subs[0].id = user_B;
+        Policies[PolicyNum].rights[0].id = 0;
+        Policies[PolicyNum].rights[1].id = 1;
+        Policies[PolicyNum].rights[2].id = 2;
+        PolicyNum = PolicyNum + 1;  
+
+
+        // Policy	AccessList-—MiHome—[user]	[MiHome]	[Client_B]	[View]
+        Devices[device_id].canBeRevoked[2].id = PolicyNum;  
+        Policies[PolicyNum].id = PolicyNum;
+        Policies[PolicyNum].resource.id = 1;
+        Policies[PolicyNum].chans[0].id = 0;
+        Policies[PolicyNum].subs[0].id = user_B;
+        Policies[PolicyNum].rights[0].id = 0;
+        PolicyNum = PolicyNum + 1;  
+
+
+
+    }
+}
+
+/******************** Huawei speaker *************************/
+
+// Share（Client_A→ Client_B）in “Huawei Smart Home” using “single device sharing”
+inline Huawei_speaker_SHARE(user_A, user_B, device_id){
+    atomic{
+        printf("'Huawei speaker': Share (user_%d → user_%d) in 'Huawei Smart Home'\n", user_A, user_B);
+                   
+        // Policy	history[client_*]	[Huawei Smart Home]	[Client_B]	[View, Control]
+        Devices[device_id].canBeRevoked[0].id = PolicyNum;  
+        Policies[PolicyNum].id = PolicyNum;
+        Policies[PolicyNum].resource.id = 3;    
+        Policies[PolicyNum].resource.history.userId = ALLUSERS;
+        Policies[PolicyNum].chans[0].id = 5;
+        Policies[PolicyNum].subs[0].id = user_B;
+        Policies[PolicyNum].rights[0].id = 0;
+        Policies[PolicyNum].rights[1].id = 1;
+        Policies[PolicyNum].rights[2].id = 2;
+        PolicyNum = PolicyNum + 1;
+        
+        
+        // Policy	speaker_state (volumn，content)	[HuaWei Smart Home, Huawei speaker]	[Client_B]	[View, Control]
+        Devices[device_id].canBeRevoked[1].id = PolicyNum;  
+        Policies[PolicyNum].id = PolicyNum;
+        Policies[PolicyNum].resource.id = 5;    
+        Policies[PolicyNum].chans[0].id = 5;
+        Policies[PolicyNum].subs[0].id = user_B;
+        Policies[PolicyNum].rights[0].id = 0;
+        Policies[PolicyNum].rights[1].id = 1;
+        Policies[PolicyNum].rights[2].id = 2;
+        PolicyNum = PolicyNum + 1;
+
+
+        //Policy	AutomationList	[Huawei Smart Home——Create Automation]	[Client_B]	[Control(create)]
+        Devices[device_id].canBeRevoked[2].id = PolicyNum;  
+        Policies[PolicyNum].id = PolicyNum;
+        Policies[PolicyNum].resource.id = 6;    
+        Policies[PolicyNum].chans[0].id = 6;
+        Policies[PolicyNum].subs[0].id = user_B;
+        Policies[PolicyNum].rights[0].id = 2;
+        PolicyNum = PolicyNum + 1;        
+
+    }
+}
+
+//Revoke
+inline Huawei_speaker_REVOKE(user_A, user_B, device_id){
+    atomic{
+        printf("'Huawei speaker': Revoke (user_%d → user_%d) in 'Huawei Smart Home'\n", user_A, user_B);
+        i = 0;
+        do
+            :: (i < MAXPOLICY) ->
+                if
+                    :: (Devices[device_id].canBeRevoked[i].id == -1) -> break;
+                    :: else ->
+                        Policies[Devices[device_id].canBeRevoked[i].id].banned = true;
+                fi;
+                i = i + 1;
+            :: else -> break;
+        od;  
+    }
+}
+
+// Create Automation
+inline Huawei_speaker_CREATE_AUTOMATION(user_id, device_id){
+    atomic{
+        // speaker_state (volumn，content)	[Timing]	[Client]	[Control]
+        Policies[PolicyNum].id = PolicyNum;
+        Policies[PolicyNum].resource.id = 5;    
+        Policies[PolicyNum].chans[0].id = 7;
+        Policies[PolicyNum].subs[0].id = user_id;
+        Policies[PolicyNum].rights[0].id = 1;
+        Policies[PolicyNum].rights[1].id = 2;
+        PolicyNum = PolicyNum + 1;       
+    }
+}
+
 
 
 inline Operation_read_personaldata(user_id, device_id){
@@ -434,22 +631,66 @@ init
 
 
         /******************** Devices *************************/
+        ///////////////////////
         // Yunmai smart scale
+        ///////////////////////
         Devices[0].id = 0;
+        // host's personal data
         Devices[0].resources[0].id = 0;
         Devices[0].resources[0].data.userId = host;
         Devices[0].resources[0].data.isEmpty = false;
+        // guest's personal data
         Devices[0].resources[1].id = 0;
         Devices[0].resources[1].data.userId = guest;
         Devices[0].resources[1].data.isEmpty = true;
+        // Accesslist
         Devices[0].resources[2].id = 1;
 
+
+        ///////////////////////
         // Philips hue brdige
+        ///////////////////////
         Devices[1].id = 1;
+        Devices[1].resources[0].id = 1;
+        Devices[1].resources[1].id = 4;
+        Devices[1].resources[2].id = 5;
+
+
+        ///////////////////////
+        // Aqara hub
+        ///////////////////////
+        Devices[2].id = 2;
+        Devices[2].resources[0].id = 1;
+        Devices[2].resources[1].id = 4;
+        Devices[2].resources[2].id = 5;        
+
+
+
+        ///////////////////////
+        // Huawei speaker
+        ///////////////////////
+        Devices[2].id = 2;
+        // host's history
+        Devices[2].resources[0].id = 0;
+        Devices[2].resources[0].data.userId = host;
+        Devices[2].resources[0].data.isEmpty = false;
+        // guest's history
+        Devices[2].resources[1].id = 0;
+        Devices[2].resources[1].data.userId = guest;
+        Devices[2].resources[1].data.isEmpty = false;
+        Devices[2].resources[2].id = 6;
+        Devices[2].resources[3].id = 7;     
+
+
+        ///////////////////////
+        // MiHome smart speaker
+        ///////////////////////
 
 
         /******************** Default Policies *************************/
+        ///////////////////////
         // Yunmai smart scale
+        ///////////////////////
         // DefaultPolicy	data[Client_*] [MiHome]	[Client_owner]	[View, Control(create)]
         Policies[PolicyNum].id = PolicyNum;
         Policies[PolicyNum].resource.id = 0;    
@@ -471,11 +712,13 @@ init
         PolicyNum = PolicyNum + 1;
 
 
+        ///////////////////////
         // Philips hue brdige
+        ///////////////////////
         // DefaultPolicy	SubDeviceList	[(Local)Philips app]	[Client_owner]	[View, Control]
         Policies[PolicyNum].id = PolicyNum;
         Policies[PolicyNum].resource.id = 4;
-        Policies[PolicyNum].chans[0].id = 3;
+        Policies[PolicyNum].chans[0].id = 2;
         Policies[PolicyNum].subs[0].id = host;
         Policies[PolicyNum].rights[0].id = 0;
         Policies[PolicyNum].rights[1].id = 1;
@@ -484,7 +727,7 @@ init
         // DefaultPolicy	sub_device_state	[(Local)Philips app]	[Client_owner]	[View, Control]
         Policies[PolicyNum].id = PolicyNum;
         Policies[PolicyNum].resource.id = 5;
-        Policies[PolicyNum].chans[0].id = 3;
+        Policies[PolicyNum].chans[0].id = 2;
         Policies[PolicyNum].subs[0].id = host;
         Policies[PolicyNum].rights[0].id = 0;
         Policies[PolicyNum].rights[1].id = 1;
@@ -494,13 +737,74 @@ init
         // Policy-x	Constraints	[(Local)Philips app——remote control]	[Client_owner]
         Policies[PolicyNum].id = PolicyNum;
         Policies[PolicyNum].resource.id = 5;
-        Policies[PolicyNum].chans[0].id = 4;
+        Policies[PolicyNum].chans[0].id = 3;
         Policies[PolicyNum].subs[0].id = host;
         Policies[PolicyNum].rights[0].id = 1;
         Policies[PolicyNum].rights[1].id = 2;
         PolicyNum = PolicyNum + 1;   
 
+        ///////////////////////
+        // Aqara hub
+        ///////////////////////
+        
+        // DefaultPolicy	SubDeviceList	[Client_owner]	[View, Control]
+        Policies[PolicyNum].id = PolicyNum;
+        Policies[PolicyNum].resource.id = 4;
+        Policies[PolicyNum].chans[0].id = 0;
+        Policies[PolicyNum].subs[0].id = host;
+        Policies[PolicyNum].rights[0].id = 0;
+        Policies[PolicyNum].rights[1].id = 1;
+        Policies[PolicyNum].rights[2].id = 2;
+        PolicyNum = PolicyNum + 1;    
+        
+        
+        // DefaultPolicy sub_device_state	[MiHome]    [Client_owner]	[View, Control]
+        Policies[PolicyNum].id = PolicyNum;
+        Policies[PolicyNum].resource.id = 5;
+        Policies[PolicyNum].chans[0].id = 0;
+        Policies[PolicyNum].subs[0].id = host;
+        Policies[PolicyNum].rights[0].id = 0;
+        Policies[PolicyNum].rights[1].id = 1;
+        Policies[PolicyNum].rights[2].id = 2;
+        PolicyNum = PolicyNum + 1;  
 
+
+        // DefaultPolicy	AccessList-—MiHome—[user]	[MiHome]	[Client_owner]	[View, Control]
+        Policies[PolicyNum].id = PolicyNum;
+        Policies[PolicyNum].resource.id = 1;
+        Policies[PolicyNum].chans[0].id = 0;
+        Policies[PolicyNum].subs[0].id = host;
+        Policies[PolicyNum].rights[0].id = 0;
+        Policies[PolicyNum].rights[1].id = 1;
+        Policies[PolicyNum].rights[2].id = 2;
+        PolicyNum = PolicyNum + 1;  
+
+        
+        ///////////////////////
+        // Huawei speaker
+        ///////////////////////
+
+        // DefaultPolicy	history[client_*]	[HuaWei Smart Home]	[Client_owner]	[View, Control]
+        Policies[PolicyNum].id = PolicyNum;
+        Policies[PolicyNum].resource.id = 3;    
+        Policies[PolicyNum].resource.history.userId = ALLUSERS;
+        Policies[PolicyNum].chans[0].id = 5;
+        Policies[PolicyNum].subs[0].id = host;
+        Policies[PolicyNum].rights[0].id = 0;
+        Policies[PolicyNum].rights[1].id = 1;
+        Policies[PolicyNum].rights[2].id = 2;
+        PolicyNum = PolicyNum + 1;
+
+
+        // DefaultPolicy	speaker_state (volumn，content)	[HuaWei Smart Home, Huawei speaker]	ALL	[View, Control]
+        Policies[PolicyNum].id = PolicyNum;
+        Policies[PolicyNum].resource.id = 5;    
+        Policies[PolicyNum].chans[0].id = 5;
+        Policies[PolicyNum].subs[0].id = host;
+        Policies[PolicyNum].rights[0].id = 0;
+        Policies[PolicyNum].rights[1].id = 1;
+        Policies[PolicyNum].rights[2].id = 2;
+        PolicyNum = PolicyNum + 1;
 
     }
     // host: {userId = 1}
