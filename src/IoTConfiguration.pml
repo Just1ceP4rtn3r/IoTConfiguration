@@ -97,83 +97,26 @@ inline check_policy(_res, channel_id, user_id, right_id){
     atomic{
         i = PolicyNum - 1;
         check_policy_result = false;
-        
-        // CHECK-1: Check policy with {channel, subject} for "constrants policy" (e.g., [MiHome—-Guest Mode] means the user can use "Guest Mode" operation)
-        do
-            :: (i >= 0) ->
-                j = 0;
-                flag_1 = false;
-                flag_2 = false;
-                if
-                    :: (Policies[i].id == -1) -> break;
-                    :: (Policies[i].banned == true) -> goto NEXTPOLICY_1;
-                    // TODO: Add all constrants poilcy
-                    :: (Policies[i].resource.id != 2 && Policies[i].resource.id != 3 && Policies[i].resource.id != 6) -> break;
-                    :: else -> skip;
-                fi;
-                // check channel_id in the channel list
-                do 
-                    :: j < MAXCHANNEL ->
-                        if
-                            :: (Policies[i].chans[j].id == -1) -> break;
-                            :: (Policies[i].chans[j].id == channel_id) ->
-                                flag_1 = true;
-                                break;
-                            :: else -> skip;
-                        fi;
-                        j = j + 1;
-                    :: else -> break
-                od;
-                // check the user_id in the subject list
-                j = 0;
-                do 
-                    :: j < MAXSUBJECT ->
-                        if
-                            :: (Policies[i].subs[j].id == -1) -> break;
-                            :: (Policies[i].subs[j].id == user_id) ->
-                                flag_2 = true;
-                                break;
-                            :: else -> skip;
-                        fi;
-                        j = j + 1;
-                    :: else -> break
-                od;
-                if
-                    :: (flag_1 == true && flag_2 == true) ->
-                        check_policy_result = true;
-                        goto FINISHED;
-                    :: else -> skip;
-                fi;
-            NEXTPOLICY_1:
-                i = i - 1;
-            :: else -> break;
-        od;
-        
-        // CHECK-2: Check policy with {resource, subject, right} only
-        
-        i = PolicyNum - 1;
-        do
-            :: (i >= 0) ->
-                if
-                    :: (Policies[i].id == -1) -> break;
-                    :: (Policies[i].banned == true) -> goto NEXTPOLICY_2;
-                    :: (Policies[i].resource.id == _res.id) ->
-                        if
-                            :: (Policies[i].resource.id == 0 && (Policies[i].resource.data.userId == _res.data.userId || Policies[i].resource.data.userId == ALLUSERS)) -> skip;                  
-                            :: (Policies[i].resource.id == 3 && (Policies[i].resource.history.userId == _res.history.userId || Policies[i].resource.history.userId == ALLUSERS)) -> skip;
-                            :: (Policies[i].resource.id != 0 && Policies[i].resource.id != 3) -> skip;
-                            :: else -> goto NEXTPOLICY_2;
-                        fi;
-                        
+        if
+            :: (_res.id == 2) ->        
+                // CHECK-1: Check policy with {channel, subject} for "constrants policy" (e.g., [MiHome—-Guest Mode] means the user can use "Guest Mode" operation)
+                do
+                    :: (i >= 0) ->
                         j = 0;
                         flag_1 = false;
                         flag_2 = false;
-                        // check the user_id in the subject list
+                        if
+                            :: (Policies[i].id == -1) -> break;
+                            :: (Policies[i].banned == true) -> goto NEXTPOLICY_1;
+                            :: (Policies[i].resource.id != 2) -> break;
+                            :: else -> skip;
+                        fi;
+                        // check channel_id in the channel list
                         do 
-                            :: j < MAXSUBJECT ->
+                            :: j < MAXCHANNEL ->
                                 if
-                                    :: (Policies[i].subs[j].id == -1) -> break;
-                                    :: (Policies[i].subs[j].id == user_id) ->
+                                    :: (Policies[i].chans[j].id == -1) -> break;
+                                    :: (Policies[i].chans[j].id == channel_id) ->
                                         flag_1 = true;
                                         break;
                                     :: else -> skip;
@@ -181,37 +124,95 @@ inline check_policy(_res, channel_id, user_id, right_id){
                                 j = j + 1;
                             :: else -> break
                         od;
-                        // check the right_id in the right list
+                        // check the user_id in the subject list
                         j = 0;
                         do 
-                            :: j < MAXRIGHT ->
+                            :: j < MAXSUBJECT ->
                                 if
-                                    :: (Policies[i].rights[j].id == -1) -> break;
-                                    :: (Policies[i].rights[j].id == right_id) ->
+                                    :: (Policies[i].subs[j].id == -1) -> break;
+                                    :: (Policies[i].subs[j].id == user_id) ->
                                         flag_2 = true;
                                         break;
                                     :: else -> skip;
                                 fi;
                                 j = j + 1;
                             :: else -> break
-                        od;                        
+                        od;
                         if
-                            
                             :: (flag_1 == true && flag_2 == true) ->
                                 check_policy_result = true;
-                                break;
-                            // {resource, subject} matched, but {right} is "empty": means the user can not access the resouce
-                            :: (flag_1 == true && Policies[i].rights[0].id == -1) ->
-                                check_policy_result = false;
-                                break;
+                                goto FINISHED;
                             :: else -> skip;
                         fi;
-                    :: else -> skip;
-                fi;
-            NEXTPOLICY_2:
-                i = i - 1;
-            :: else -> break;
-        od;   
+                    NEXTPOLICY_1:
+                        i = i - 1;
+                    :: else -> break;
+                od;
+            :: else ->         
+                // CHECK-2: Check policy with {resource, subject, right} only                
+                i = PolicyNum - 1;
+                do
+                    :: (i >= 0) ->
+                        if
+                            :: (Policies[i].id == -1) -> break;
+                            :: (Policies[i].banned == true) -> goto NEXTPOLICY_2;
+                            :: (Policies[i].resource.id == _res.id) ->
+                                if
+                                    :: (Policies[i].resource.id == 0 && (Policies[i].resource.data.userId == _res.data.userId || Policies[i].resource.data.userId == ALLUSERS)) -> skip;                  
+                                    :: (Policies[i].resource.id == 3 && (Policies[i].resource.history.userId == _res.history.userId || Policies[i].resource.history.userId == ALLUSERS)) -> skip;
+                                    :: (Policies[i].resource.id != 0 && Policies[i].resource.id != 3) -> skip;
+                                    :: else -> goto NEXTPOLICY_2;
+                                fi;
+                                
+                                j = 0;
+                                flag_1 = false;
+                                flag_2 = false;
+                                // check the user_id in the subject list
+                                do 
+                                    :: j < MAXSUBJECT ->
+                                        if
+                                            :: (Policies[i].subs[j].id == -1) -> break;
+                                            :: (Policies[i].subs[j].id == user_id) ->
+                                                flag_1 = true;
+                                                break;
+                                            :: else -> skip;
+                                        fi;
+                                        j = j + 1;
+                                    :: else -> break
+                                od;
+                                // check the right_id in the right list
+                                j = 0;
+                                do 
+                                    :: j < MAXRIGHT ->
+                                        if
+                                            :: (Policies[i].rights[j].id == -1) -> break;
+                                            :: (Policies[i].rights[j].id == right_id) ->
+                                                flag_2 = true;
+                                                break;
+                                            :: else -> skip;
+                                        fi;
+                                        j = j + 1;
+                                    :: else -> break
+                                od;                        
+                                if
+                                    
+                                    :: (flag_1 == true && flag_2 == true) ->
+                                        check_policy_result = true;
+                                        break;
+                                    // {resource, subject} matched, but {right} is "empty": means the user can not access the resouce
+                                    :: (flag_1 == true && Policies[i].rights[0].id == -1) ->
+                                        check_policy_result = false;
+                                        break;
+                                    :: else -> skip;
+                                fi;
+                            :: else -> skip;
+                        fi;
+                    NEXTPOLICY_2:
+                        i = i - 1;
+                    :: else -> break;
+                od;  
+        fi; 
+
 
         FINISHED:
             skip;
@@ -276,8 +277,8 @@ inline Yunmai_smart_scale_SHARE(user_A, user_B, device_id){
 inline Yunmai_smart_scale_GUESTMODE(user_id, device_id, action){
     atomic{
         check_policy_result = false;
-        // {resource:, channel_id:1, user_id:user_id, right_id:}
-        res_need_check.id = -1;
+        // {resource: constraints, channel_id:1, user_id:user_id, right_id:}
+        res_need_check.id = 2;
         check_policy(res_need_check, 1, user_id, -1)
         if
             ::  (check_policy_result == true) -> 
@@ -371,7 +372,7 @@ inline Philips_bridge_SHARE(user_A, user_B, device_id){
         // Policy-x	Constraints	[(Local)Philips app——remote control]	[Client_B]	[Control]
         Devices[device_id].canBeRevoked[2].id = PolicyNum;
         Policies[PolicyNum].id = PolicyNum;
-        Policies[PolicyNum].resource.id = 5;
+        Policies[PolicyNum].resource.id = 2;
         Policies[PolicyNum].chans[0].id = 3;
         Policies[PolicyNum].subs[0].id = user_B;
         Policies[PolicyNum].rights[0].id = 1;
@@ -385,8 +386,8 @@ inline Philips_bridge_SHARE(user_A, user_B, device_id){
 inline Philips_bridge_REMOTECONTROl_ON(user_id, device_id){
     atomic{
         check_policy_result = false;
-        // {resource:, channel_id:"(Local)Philips app——remote control", user_id:user_id, right_id:}
-        res_need_check.id = -1;
+        // {resource: constraints, channel_id:"(Local)Philips app——remote control", user_id:user_id, right_id:}
+        res_need_check.id = 2;
         check_policy(res_need_check, 3, user_id, -1)
         if
             ::  (check_policy_result == true) -> 
@@ -492,10 +493,10 @@ inline Huawei_speaker_SHARE(user_A, user_B, device_id){
         PolicyNum = PolicyNum + 1;
 
 
-        //Policy	AutomationList	[Huawei Smart Home——Create Automation]	[Client_B]	[Control(create)]
+        //Policy	Constraints	[Huawei Smart Home——Create Automation]	[Client_B]	[Control(create)]
         Devices[device_id].canBeRevoked[2].id = PolicyNum;  
         Policies[PolicyNum].id = PolicyNum;
-        Policies[PolicyNum].resource.id = 6;    
+        Policies[PolicyNum].resource.id = 2;    
         Policies[PolicyNum].chans[0].id = 6;
         Policies[PolicyNum].subs[0].id = user_B;
         Policies[PolicyNum].rights[0].id = 2;
@@ -525,14 +526,32 @@ inline Huawei_speaker_REVOKE(user_A, user_B, device_id){
 // Create Automation
 inline Huawei_speaker_CREATE_AUTOMATION(user_id, device_id){
     atomic{
-        // speaker_state (volumn，content)	[Timing]	[Client]	[Control]
-        Policies[PolicyNum].id = PolicyNum;
-        Policies[PolicyNum].resource.id = 5;    
-        Policies[PolicyNum].chans[0].id = 7;
-        Policies[PolicyNum].subs[0].id = user_id;
-        Policies[PolicyNum].rights[0].id = 1;
-        Policies[PolicyNum].rights[1].id = 2;
-        PolicyNum = PolicyNum + 1;       
+        check_policy_result = false;
+        // {resource:1, channel_id:Huawei Smart Home——Create Automation, user_id, right_id}
+        res_need_check.id = 2;
+        check_policy(res_need_check, 6, user_id, 1)
+        if
+            ::  (check_policy_result == true) -> 
+                printf("Allow\n")
+                // speaker_state (volumn，content)	[Timing]	[Client]	[Control]
+                Policies[PolicyNum].id = PolicyNum;
+                Policies[PolicyNum].resource.id = 5;    
+                Policies[PolicyNum].chans[0].id = 7;
+                Policies[PolicyNum].subs[0].id = user_id;
+                Policies[PolicyNum].rights[0].id = 1;
+                Policies[PolicyNum].rights[1].id = 2;
+                PolicyNum = PolicyNum + 1;      
+            :: else -> skip;
+        fi;
+    }
+}
+
+
+/******************** MiHome smart speaker *************************/
+inline MiHome_smart_speaker_SHARE(user_A, user_B, device_id){
+    atomic{
+        printf("'MiHome smart speaker': Share (user_%d → user_%d) in 'MiHome app'\n", user_A, user_B);
+        skip
     }
 }
 
@@ -736,7 +755,7 @@ init
 
         // Policy-x	Constraints	[(Local)Philips app——remote control]	[Client_owner]
         Policies[PolicyNum].id = PolicyNum;
-        Policies[PolicyNum].resource.id = 5;
+        Policies[PolicyNum].resource.id = 2;
         Policies[PolicyNum].chans[0].id = 3;
         Policies[PolicyNum].subs[0].id = host;
         Policies[PolicyNum].rights[0].id = 1;
@@ -806,6 +825,21 @@ init
         Policies[PolicyNum].rights[2].id = 2;
         PolicyNum = PolicyNum + 1;
 
+
+        ///////////////////////
+        // MiHome smart speaker
+        ///////////////////////
+
+        // DefaultPolicy	camera_state	[MiHome]	[Client_owner]	[View, Control]
+        Policies[PolicyNum].id = PolicyNum;
+        Policies[PolicyNum].resource.id = 5;    
+        Policies[PolicyNum].chans[0].id = 0;
+        Policies[PolicyNum].subs[0].id = host;
+        Policies[PolicyNum].rights[0].id = 0;
+        Policies[PolicyNum].rights[1].id = 1;
+        Policies[PolicyNum].rights[2].id = 2;
+        PolicyNum = PolicyNum + 1;
+        
     }
     // host: {userId = 1}
     run ProcessHost(); 
