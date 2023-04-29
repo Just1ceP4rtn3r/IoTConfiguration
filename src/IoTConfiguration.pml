@@ -472,6 +472,33 @@ init
 
 
         // Philips hue brdige
+        // DefaultPolicy	SubDeviceList	[(Local)Philips app]	[Client_owner]	[View, Control]
+        Policies[PolicyNum].id = PolicyNum;
+        Policies[PolicyNum].resource.id = 4;
+        Policies[PolicyNum].chans[0].id = 3;
+        Policies[PolicyNum].subs[0].id = host;
+        Policies[PolicyNum].rights[0].id = 0;
+        Policies[PolicyNum].rights[1].id = 1;
+        Policies[PolicyNum].rights[2].id = 2;
+        PolicyNum = PolicyNum + 1;        
+        // DefaultPolicy	sub_device_state	[(Local)Philips app]	[Client_owner]	[View, Control]
+        Policies[PolicyNum].id = PolicyNum;
+        Policies[PolicyNum].resource.id = 5;
+        Policies[PolicyNum].chans[0].id = 3;
+        Policies[PolicyNum].subs[0].id = host;
+        Policies[PolicyNum].rights[0].id = 0;
+        Policies[PolicyNum].rights[1].id = 1;
+        Policies[PolicyNum].rights[2].id = 2;
+        PolicyNum = PolicyNum + 1;        
+
+        // Policy-x	Constraints	[(Local)Philips app——remote control]	[Client_owner]
+        Policies[PolicyNum].id = PolicyNum;
+        Policies[PolicyNum].resource.id = 5;
+        Policies[PolicyNum].chans[0].id = 4;
+        Policies[PolicyNum].subs[0].id = host;
+        Policies[PolicyNum].rights[0].id = 1;
+        Policies[PolicyNum].rights[1].id = 2;
+        PolicyNum = PolicyNum + 1;   
 
 
 
