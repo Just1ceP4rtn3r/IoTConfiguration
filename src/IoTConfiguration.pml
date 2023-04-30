@@ -743,20 +743,21 @@ proctype ProcessHost(){
     bool COMPETE_Philips_bridge_SHARE = false;
     bool COMPETE_Philips_bridge_REMOTECONTROl_ON = false;
     bool COMPLETE_Operation_read_accesslist = false;
+    bool COMPETE_Aqara_hub_SHARE = false;
 
     do
         // :: Yunmai_smart_scale_SHARE(host, guest, Devices[0].id);
         // :: Yunmai_smart_scale_REVOKE(host, guest, Devices[0].id);
         // :: Operation_read_personaldata(host, Devices[0].id);
 
-        :: 
-            atomic{
-                if
-                    :: (COMPETE_Philips_bridge_SHARE == false) ->
-                        COMPETE_Philips_bridge_SHARE = true;
-                        Philips_bridge_SHARE(host, guest, Devices[1].id);
-                fi;
-            }
+        // :: 
+        //     atomic{
+        //         if
+        //             :: (COMPETE_Philips_bridge_SHARE == false) ->
+        //                 COMPETE_Philips_bridge_SHARE = true;
+        //                 Philips_bridge_SHARE(host, guest, Devices[1].id);
+        //         fi;
+        //     }
         // ::             
         //     atomic{
         //         if
@@ -765,12 +766,22 @@ proctype ProcessHost(){
         //                 Philips_bridge_REMOTECONTROl_ON(host, Devices[1].id);
         //         fi;
         //     }
+        // :: 
+        //     atomic{
+        //         if
+        //             :: (COMPLETE_Operation_read_accesslist == false) ->
+        //                 COMPLETE_Operation_read_accesslist = true;
+        //                 Operation_read_accesslist(host, Devices[1].id);
+        //         fi;
+        //     }
+
+
         :: 
             atomic{
                 if
-                    :: (COMPLETE_Operation_read_accesslist == false) ->
-                        COMPLETE_Operation_read_accesslist = true;
-                        Operation_read_accesslist(host, Devices[1].id);
+                    :: (COMPETE_Philips_bridge_SHARE == false) ->
+                        COMPETE_Philips_bridge_SHARE = true;
+                        Aqara_hub_SHARE(host, guest, Devices[2].id);
                 fi;
             }
         :: else -> break;
