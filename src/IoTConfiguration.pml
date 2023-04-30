@@ -99,6 +99,7 @@ Policy Policies[MAXPOLICY];
 
 short PolicyNum = 0;
 
+bool HasBeenRevoked = false;
 
 // Check the policy constraints
 inline check_policy(_res, channel_id, user_id, right_id){
@@ -209,8 +210,9 @@ inline check_policy(_res, channel_id, user_id, right_id){
                                     :: else -> break;
                                 od;
                                 if
-                                    
-                                    :: (flag_2 == false) -> goto NEXTPOLICY_2
+                                    // if {channel} = -1, means not check the channel (any channel is ok)
+                                    :: (channel_id == -1)  -> flag_2 = true;
+                                    :: (flag_2 == false) -> goto NEXTPOLICY_2;
                                     :: else -> skip;
                                 fi;                                
                                 // check the right_id in the right list
@@ -563,6 +565,9 @@ inline Huawei_speaker_REVOKE(user_A, user_B, device_id){
                 i = i + 1;
             :: else -> break;
         od;  
+        
+        Operation_After_Revoke(user_B, device_id)
+
     }
 }
 
@@ -578,7 +583,7 @@ inline Huawei_speaker_CREATE_AUTOMATION(user_id, device_id){
             ::  (check_policy_result == true) -> 
                 printf("Allow\n")
                 // speaker_state (volumn，content)	[Timing]	[Client]	[Control]
-                Devices[device_id].canChangeState[Devices[device_id3].canChangeStateNum].id = PolicyNum
+                Devices[device_id].canChangeState[Devices[device_id].canChangeStateNum].id = PolicyNum
                 Devices[device_id].canChangeStateNum = Devices[device_id].canChangeStateNum + 1;
                 Policies[PolicyNum].id = PolicyNum;
                 Policies[PolicyNum].resource.id = 5;    
@@ -689,7 +694,6 @@ inline Operation_read_accesslist(user_id, device_id){
 }
 
 
-// resource: 4
 inline Operation_control_subdevicelist(user_id, device_id){
     atomic{
         printf("user_%d control SubDeviceList of device_%d\n", user_id, device_id);
@@ -711,6 +715,25 @@ inline Operation_control_subdevicelist(user_id, device_id){
 }
 
 
+inline Operation_After_Revoke(user_id, device_id){
+    atomic{
+        printf("After Revocation\n", user_id, device_id);
+                                                
+        check_policy_result = false;
+        // {resource:state, channel_id: *, user_id:, right_id: control}
+        res_need_check.id = 5;                                   
+        check_policy(res_need_check, -1, user_id, 1)
+        if
+            ::  (check_policy_result == true) -> 
+                printf("Allow\n")
+                assert(user_id == host);
+                
+            :: else ->
+                printf("Deny\n") 
+        fi;        
+
+    }
+}
 
 
 
@@ -744,6 +767,8 @@ proctype ProcessHost(){
     bool COMPETE_Philips_bridge_REMOTECONTROl_ON = false;
     bool COMPLETE_Operation_read_accesslist = false;
     bool COMPETE_Aqara_hub_SHARE = false;
+    bool COMPETE_Huawei_speaker_SHARE = false;
+    bool COMPETE_Huawei_speaker_REVOKE = false;
 
     do
         // :: Yunmai_smart_scale_SHARE(host, guest, Devices[0].id);
@@ -776,12 +801,30 @@ proctype ProcessHost(){
         //     }
 
 
+        // :: 
+        //     atomic{
+        //         if
+        //             :: (COMPETE_Philips_bridge_SHARE == false) ->
+        //                 COMPETE_Philips_bridge_SHARE = true;
+        //                 Aqara_hub_SHARE(host, guest, Devices[2].id);
+        //         fi;
+        //     }
+
+
         :: 
             atomic{
                 if
-                    :: (COMPETE_Philips_bridge_SHARE == false) ->
-                        COMPETE_Philips_bridge_SHARE = true;
-                        Aqara_hub_SHARE(host, guest, Devices[2].id);
+                    :: (COMPETE_Huawei_speaker_SHARE == false) ->
+                        COMPETE_Huawei_speaker_SHARE = true;
+                        Huawei_speaker_SHARE(host, guest, Devices[3].id);
+                fi;
+            }
+        :: 
+            atomic{
+                if
+                    :: (COMPETE_Huawei_speaker_REVOKE == false) ->
+                        COMPETE_Huawei_speaker_REVOKE = true;
+                        Huawei_speaker_REVOKE(host, guest, Devices[3].id);
                 fi;
             }
         :: else -> break;
@@ -822,10 +865,18 @@ proctype ProcessGuest(){
             //     fi;
             // }
 
-        :: 
+
+        // :: 
+        //     atomic{
+        //         Operation_control_subdevicelist(guest, Devices[2].id);
+        //     }
+
+
+        ::             
             atomic{
-                Operation_control_subdevicelist(guest, Devices[2].id);
+                Huawei_speaker_CREATE_AUTOMATION(guest, Devices[3].id);
             }
+        
         :: else -> break;
     od;
 
@@ -976,68 +1027,68 @@ init
         // // Aqara hub
         // ///////////////////////
         
-        // DefaultPolicy	SubDeviceList	[Client_owner]	[View, Control]
-        Policies[PolicyNum].id = PolicyNum;
-        Policies[PolicyNum].resource.id = 4;
-        Policies[PolicyNum].chans[0].id = 0;
-        Policies[PolicyNum].subs[0].id = host;
-        Policies[PolicyNum].rights[0].id = 0;
-        Policies[PolicyNum].rights[1].id = 1;
-        Policies[PolicyNum].rights[2].id = 2;
-        PolicyNum = PolicyNum + 1;    
+        // // DefaultPolicy	SubDeviceList	[Client_owner]	[View, Control]
+        // Policies[PolicyNum].id = PolicyNum;
+        // Policies[PolicyNum].resource.id = 4;
+        // Policies[PolicyNum].chans[0].id = 0;
+        // Policies[PolicyNum].subs[0].id = host;
+        // Policies[PolicyNum].rights[0].id = 0;
+        // Policies[PolicyNum].rights[1].id = 1;
+        // Policies[PolicyNum].rights[2].id = 2;
+        // PolicyNum = PolicyNum + 1;    
         
         
-        // DefaultPolicy sub_device_state	[MiHome]    [Client_owner]	[View, Control]
-        Devices[2].canChangeState[Devices[2].canChangeStateNum].id = PolicyNum
-        Devices[2].canChangeStateNum = Devices[2].canChangeStateNum + 1;
-        Policies[PolicyNum].id = PolicyNum;
-        Policies[PolicyNum].resource.id = 5;
-        Policies[PolicyNum].chans[0].id = 0;
-        Policies[PolicyNum].subs[0].id = host;
-        Policies[PolicyNum].rights[0].id = 0;
-        Policies[PolicyNum].rights[1].id = 1;
-        Policies[PolicyNum].rights[2].id = 2;
-        PolicyNum = PolicyNum + 1;  
+        // // DefaultPolicy sub_device_state	[MiHome]    [Client_owner]	[View, Control]
+        // Devices[2].canChangeState[Devices[2].canChangeStateNum].id = PolicyNum
+        // Devices[2].canChangeStateNum = Devices[2].canChangeStateNum + 1;
+        // Policies[PolicyNum].id = PolicyNum;
+        // Policies[PolicyNum].resource.id = 5;
+        // Policies[PolicyNum].chans[0].id = 0;
+        // Policies[PolicyNum].subs[0].id = host;
+        // Policies[PolicyNum].rights[0].id = 0;
+        // Policies[PolicyNum].rights[1].id = 1;
+        // Policies[PolicyNum].rights[2].id = 2;
+        // PolicyNum = PolicyNum + 1;  
 
 
-        // DefaultPolicy	AccessList-—MiHome—[user]	[MiHome]	[Client_owner]	[View, Control]
-        Policies[PolicyNum].id = PolicyNum;
-        Policies[PolicyNum].resource.id = 1;
-        Policies[PolicyNum].chans[0].id = 0;
-        Policies[PolicyNum].subs[0].id = host;
-        Policies[PolicyNum].rights[0].id = 0;
-        Policies[PolicyNum].rights[1].id = 1;
-        Policies[PolicyNum].rights[2].id = 2;
-        PolicyNum = PolicyNum + 1;  
+        // // DefaultPolicy	AccessList-—MiHome—[user]	[MiHome]	[Client_owner]	[View, Control]
+        // Policies[PolicyNum].id = PolicyNum;
+        // Policies[PolicyNum].resource.id = 1;
+        // Policies[PolicyNum].chans[0].id = 0;
+        // Policies[PolicyNum].subs[0].id = host;
+        // Policies[PolicyNum].rights[0].id = 0;
+        // Policies[PolicyNum].rights[1].id = 1;
+        // Policies[PolicyNum].rights[2].id = 2;
+        // PolicyNum = PolicyNum + 1;  
 
         
         // ///////////////////////
         // // Huawei speaker
         // ///////////////////////
 
-        // // DefaultPolicy	history[client_*]	[HuaWei Smart Home]	[Client_owner]	[View, Control]
-        // Policies[PolicyNum].id = PolicyNum;
-        // Policies[PolicyNum].resource.id = 3;    
-        // Policies[PolicyNum].resource.history.userId = ALLUSERS;
-        // Policies[PolicyNum].chans[0].id = 5;
-        // Policies[PolicyNum].subs[0].id = host;
-        // Policies[PolicyNum].rights[0].id = 0;
-        // Policies[PolicyNum].rights[1].id = 1;
-        // Policies[PolicyNum].rights[2].id = 2;
-        // PolicyNum = PolicyNum + 1;
+        // DefaultPolicy	history[client_*]	[HuaWei Smart Home]	[Client_owner]	[View, Control]
+        Policies[PolicyNum].id = PolicyNum;
+        Policies[PolicyNum].resource.id = 3;    
+        Policies[PolicyNum].resource.history.userId = ALLUSERS;
+        Policies[PolicyNum].chans[0].id = 5;
+        Policies[PolicyNum].subs[0].id = host;
+        Policies[PolicyNum].rights[0].id = 0;
+        Policies[PolicyNum].rights[1].id = 1;
+        Policies[PolicyNum].rights[2].id = 2;
+        PolicyNum = PolicyNum + 1;
 
 
-        // // DefaultPolicy	speaker_state (volumn，content)	[HuaWei Smart Home, Huawei speaker]	ALL	[View, Control]
-        // Devices[3].canChangeState[Devices[3].canChangeStateNum].id = PolicyNum
-        // Devices[3].canChangeStateNum = Devices[3].canChangeStateNum + 1;
-        // Policies[PolicyNum].id = PolicyNum;
-        // Policies[PolicyNum].resource.id = 5;    
-        // Policies[PolicyNum].chans[0].id = 5;
-        // Policies[PolicyNum].subs[0].id = host;
-        // Policies[PolicyNum].rights[0].id = 0;
-        // Policies[PolicyNum].rights[1].id = 1;
-        // Policies[PolicyNum].rights[2].id = 2;
-        // PolicyNum = PolicyNum + 1;
+        // DefaultPolicy	speaker_state (volumn，content)	[HuaWei Smart Home, Huawei speaker]	ALL	[View, Control]
+        Devices[3].canChangeState[Devices[3].canChangeStateNum].id = PolicyNum
+        Devices[3].canChangeStateNum = Devices[3].canChangeStateNum + 1;
+        Policies[PolicyNum].id = PolicyNum;
+        Policies[PolicyNum].resource.id = 5;    
+        Policies[PolicyNum].chans[0].id = 5;
+        Policies[PolicyNum].subs[0].id = host;
+        Policies[PolicyNum].rights[0].id = 0;
+        Policies[PolicyNum].rights[1].id = 1;
+        Policies[PolicyNum].rights[2].id = 2;
+        PolicyNum = PolicyNum + 1;
 
 
         // ///////////////////////
