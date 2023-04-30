@@ -802,19 +802,15 @@ proctype ProcessGuest(){
         // :: Operation_read_personaldata(guest, Devices[0].id);
 
 
-        // :: 
-            // atomic{
-            //     if
-            //         :: (COMPETE_Philips_bridge_REMOTECONTROl_ON == false) ->
-            //             COMPETE_Philips_bridge_REMOTECONTROl_ON = true;
-            //             Philips_bridge_REMOTECONTROl_ON(guest, Devices[1].id);
-            //     fi;
-            // }
-
         :: 
-            atomic{
-                Operation_control_subdevicelist(guest, Devices[2].id);
-            }
+        atomic{
+            if
+                :: (COMPETE_Philips_bridge_REMOTECONTROl_ON == false) ->
+                    COMPETE_Philips_bridge_REMOTECONTROl_ON = true;
+                    Philips_bridge_REMOTECONTROl_ON(guest, Devices[1].id);
+            fi;
+        }
+
         :: else -> break;
     od;
 
@@ -919,85 +915,85 @@ init
         ///////////////////////
         // Philips hue brdige
         ///////////////////////
-        // // DefaultPolicy	SubDeviceList	[(Local)Philips app]	[Client_owner]	[View, Control]
-        // Policies[PolicyNum].id = PolicyNum;
-        // Policies[PolicyNum].resource.id = 4;
-        // Policies[PolicyNum].chans[0].id = 2;
-        // Policies[PolicyNum].subs[0].id = host;
-        // Policies[PolicyNum].rights[0].id = 0;
-        // Policies[PolicyNum].rights[1].id = 1;
-        // Policies[PolicyNum].rights[2].id = 2;
-        // PolicyNum = PolicyNum + 1;        
-        // // DefaultPolicy	sub_device_state	[(Local)Philips app]	[Client_owner]	[View, Control]
-        // Devices[1].canChangeState[Devices[1].canChangeStateNum].id = PolicyNum
-        // Devices[1].canChangeStateNum = Devices[1].canChangeStateNum + 1;
-        // Policies[PolicyNum].id = PolicyNum;
-        // Policies[PolicyNum].resource.id = 5;
-        // Policies[PolicyNum].chans[0].id = 2;
-        // Policies[PolicyNum].subs[0].id = host;
-        // Policies[PolicyNum].rights[0].id = 0;
-        // Policies[PolicyNum].rights[1].id = 1;
-        // Policies[PolicyNum].rights[2].id = 2;
-        // PolicyNum = PolicyNum + 1;     
+        // DefaultPolicy	SubDeviceList	[(Local)Philips app]	[Client_owner]	[View, Control]
+        Policies[PolicyNum].id = PolicyNum;
+        Policies[PolicyNum].resource.id = 4;
+        Policies[PolicyNum].chans[0].id = 2;
+        Policies[PolicyNum].subs[0].id = host;
+        Policies[PolicyNum].rights[0].id = 0;
+        Policies[PolicyNum].rights[1].id = 1;
+        Policies[PolicyNum].rights[2].id = 2;
+        PolicyNum = PolicyNum + 1;        
+        // DefaultPolicy	sub_device_state	[(Local)Philips app]	[Client_owner]	[View, Control]
+        Devices[1].canChangeState[Devices[1].canChangeStateNum].id = PolicyNum
+        Devices[1].canChangeStateNum = Devices[1].canChangeStateNum + 1;
+        Policies[PolicyNum].id = PolicyNum;
+        Policies[PolicyNum].resource.id = 5;
+        Policies[PolicyNum].chans[0].id = 2;
+        Policies[PolicyNum].subs[0].id = host;
+        Policies[PolicyNum].rights[0].id = 0;
+        Policies[PolicyNum].rights[1].id = 1;
+        Policies[PolicyNum].rights[2].id = 2;
+        PolicyNum = PolicyNum + 1;     
 
 
-        // // Policy-x	Constraints	[(Local)Philips app——remote control]	[Client_owner]
-        // Policies[PolicyNum].id = PolicyNum;
-        // Policies[PolicyNum].resource.id = 2;
-        // Policies[PolicyNum].chans[0].id = 3;
-        // Policies[PolicyNum].subs[0].id = host;
-        // Policies[PolicyNum].rights[0].id = 1;
-        // Policies[PolicyNum].rights[1].id = 2;
-        // PolicyNum = PolicyNum + 1;   
+        // Policy-x	Constraints	[(Local)Philips app——remote control]	[Client_owner]
+        Policies[PolicyNum].id = PolicyNum;
+        Policies[PolicyNum].resource.id = 2;
+        Policies[PolicyNum].chans[0].id = 3;
+        Policies[PolicyNum].subs[0].id = host;
+        Policies[PolicyNum].rights[0].id = 1;
+        Policies[PolicyNum].rights[1].id = 2;
+        PolicyNum = PolicyNum + 1;   
 
-        // // DefaultPolicy	Accesslist	[(Local)Philips app]	[Client_owner]	[View, Control]
-        // Policies[PolicyNum].id = PolicyNum;
-        // Policies[PolicyNum].resource.id = 1;
-        // Policies[PolicyNum].chans[0].id = 2;
-        // Policies[PolicyNum].subs[0].id = host;
-        // Policies[PolicyNum].rights[0].id = 0;
-        // Policies[PolicyNum].rights[1].id = 1;
-        // Policies[PolicyNum].rights[2].id = 2;
-        // PolicyNum = PolicyNum + 1;       
+        // DefaultPolicy	Accesslist	[(Local)Philips app]	[Client_owner]	[View, Control]
+        Policies[PolicyNum].id = PolicyNum;
+        Policies[PolicyNum].resource.id = 1;
+        Policies[PolicyNum].chans[0].id = 2;
+        Policies[PolicyNum].subs[0].id = host;
+        Policies[PolicyNum].rights[0].id = 0;
+        Policies[PolicyNum].rights[1].id = 1;
+        Policies[PolicyNum].rights[2].id = 2;
+        PolicyNum = PolicyNum + 1;       
 
 
         // ///////////////////////
         // // Aqara hub
         // ///////////////////////
         
-        // DefaultPolicy	SubDeviceList	[Client_owner]	[View, Control]
-        Policies[PolicyNum].id = PolicyNum;
-        Policies[PolicyNum].resource.id = 4;
-        Policies[PolicyNum].chans[0].id = 0;
-        Policies[PolicyNum].subs[0].id = host;
-        Policies[PolicyNum].rights[0].id = 0;
-        Policies[PolicyNum].rights[1].id = 1;
-        Policies[PolicyNum].rights[2].id = 2;
-        PolicyNum = PolicyNum + 1;    
+        // // DefaultPolicy	SubDeviceList	[Client_owner]	[View, Control]
+        // Policies[PolicyNum].id = PolicyNum;
+        // Policies[PolicyNum].resource.id = 4;
+        // Policies[PolicyNum].chans[0].id = 0;
+        // Policies[PolicyNum].subs[0].id = host;
+        // Policies[PolicyNum].rights[0].id = 0;
+        // Policies[PolicyNum].rights[1].id = 1;
+        // Policies[PolicyNum].rights[2].id = 2;
+        // PolicyNum = PolicyNum + 1;    
         
         
-        // DefaultPolicy sub_device_state	[MiHome]    [Client_owner]	[View, Control]
-        Devices[2].canChangeState[Devices[2].canChangeStateNum].id = PolicyNum
-        Devices[2].canChangeStateNum = Devices[2].canChangeStateNum + 1;
-        Policies[PolicyNum].id = PolicyNum;
-        Policies[PolicyNum].resource.id = 5;
-        Policies[PolicyNum].chans[0].id = 0;
-        Policies[PolicyNum].subs[0].id = host;
-        Policies[PolicyNum].rights[0].id = 0;
-        Policies[PolicyNum].rights[1].id = 1;
-        Policies[PolicyNum].rights[2].id = 2;
-        PolicyNum = PolicyNum + 1;  
+        // // DefaultPolicy sub_device_state	[MiHome]    [Client_owner]	[View, Control]
+        // Devices[2].canChangeState[Devices[2].canChangeStateNum].id = PolicyNum
+        // Devices[2].canChangeStateNum = Devices[2].canChangeStateNum + 1;
+        // Policies[PolicyNum].id = PolicyNum;
+        // Policies[PolicyNum].resource.id = 5;
+        // Policies[PolicyNum].chans[0].id = 0;
+        // Policies[PolicyNum].subs[0].id = host;
+        // Policies[PolicyNum].rights[0].id = 0;
+        // Policies[PolicyNum].rights[1].id = 1;
+        // Policies[PolicyNum].rights[2].id = 2;
+        // PolicyNum = PolicyNum + 1;  
 
 
-        // DefaultPolicy	AccessList-—MiHome—[user]	[MiHome]	[Client_owner]	[View, Control]
-        Policies[PolicyNum].id = PolicyNum;
-        Policies[PolicyNum].resource.id = 1;
-        Policies[PolicyNum].chans[0].id = 0;
-        Policies[PolicyNum].subs[0].id = host;
-        Policies[PolicyNum].rights[0].id = 0;
-        Policies[PolicyNum].rights[1].id = 1;
-        Policies[PolicyNum].rights[2].id = 2;
-        PolicyNum = PolicyNum + 1;  
+        // // DefaultPolicy	AccessList-—MiHome—[user]	[MiHome]	[Client_owner]	[View, Control]
+        // Policies[PolicyNum].id = PolicyNum;
+        // Policies[PolicyNum].resource.id = 1;
+        // Policies[PolicyNum].chans[0].id = 0;
+        // Policies[PolicyNum].subs[0].id = host;
+        // Policies[PolicyNum].rights[0].id = 0;
+        // Policies[PolicyNum].rights[1].id = 1;
+        // Policies[PolicyNum].rights[2].id = 2;
+        // PolicyNum = PolicyNum + 1;  
 
         
         // ///////////////////////
