@@ -4,7 +4,7 @@
 #define MAXRIGHT 5
 #define MAXRESOURCE 20
 #define MAXPOLICY 50
-#define MAXDEVICE 5
+#define MAXDEVICE 6
 
 #define ALLUSERS 0
 #define host 1
@@ -612,6 +612,81 @@ inline MiHome_smart_speaker_SHARE(user_A, user_B, device_id){
 
 
 
+/******************** google home *************************/
+inline Google_home_SHARE(user_A, user_B, device_id){
+    atomic{
+        printf("'google home': Share (user_%d → user_%d)\n", user_A, user_B); 
+        // Policy	Device_state	[google-home-app]	[Client_guest]	[Full access and control]   
+        Devices[device_id].canBeRevoked[0].id = PolicyNum;  
+        Devices[device_id].canChangeState[Devices[device_id].canChangeStateNum].id = PolicyNum
+        Devices[device_id].canChangeStateNum = Devices[device_id].canChangeStateNum + 1;
+        Policies[PolicyNum].id = PolicyNum;
+        Policies[PolicyNum].resource.id = 5;    
+        Policies[PolicyNum].chans[0].id = 8;
+        Policies[PolicyNum].subs[0].id = user_B;
+        Policies[PolicyNum].rights[0].id = 0;
+        Policies[PolicyNum].rights[1].id = 1;
+        Policies[PolicyNum].rights[2].id = 2;
+        PolicyNum = PolicyNum + 1;      
+
+        //Policy-x	Constraints	[google-home-app —— Link third-party ]	[Client_guest]	
+        Devices[device_id].canBeRevoked[1].id = PolicyNum;
+        Policies[PolicyNum].id = PolicyNum;
+        Policies[PolicyNum].resource.id = 2;
+        Policies[PolicyNum].chans[0].id = 9;
+        Policies[PolicyNum].subs[0].id = user_B;
+        Policies[PolicyNum].rights[0].id = 1;
+        Policies[PolicyNum].rights[1].id = 2;
+        PolicyNum = PolicyNum + 1;  
+
+
+    }
+}
+
+inline Google_home_REVOKE(user_A, user_B, device_id){
+    atomic{
+        printf("'google home': Revoke (user_%d → user_%d)\n", user_A, user_B);    
+        i = 0;
+        do
+            :: (i < MAXPOLICY) ->
+                if
+                    :: (Devices[device_id].canBeRevoked[i].id == -1) -> break;
+                    :: else ->
+                        Policies[Devices[device_id].canBeRevoked[i].id].banned = true;
+                fi;
+                i = i + 1;
+            :: else -> break;
+        od;  
+        
+        
+        Operation_After_Revoke(user_B, device_id)
+    }
+}
+
+inline Google_home_LINK_THIRDPARTY_SERVICE(user_id, device_id){
+    atomic{
+        printf("'google home': user_%d Link third-party services (such as spotify)\n", user_id);
+        check_policy_result = false;
+        // {resource:1, channel_id:Huawei Smart Home——Create Automation, user_id, right_id}
+        res_need_check.id = 2;
+        check_policy(res_need_check, 9, user_id, 1)
+        if
+            ::  (check_policy_result == true) -> 
+                printf("Allow\n")
+                // Device_state	[google-home-app, third-party-app]	[Client]	[Control]
+                Devices[device_id].canChangeState[Devices[device_id].canChangeStateNum].id = PolicyNum
+                Devices[device_id].canChangeStateNum = Devices[device_id].canChangeStateNum + 1;
+                Policies[PolicyNum].id = PolicyNum;
+                Policies[PolicyNum].resource.id = 5;    
+                Policies[PolicyNum].chans[0].id = 8;
+                Policies[PolicyNum].subs[0].id = user_id;
+                Policies[PolicyNum].rights[0].id = 1;
+                Policies[PolicyNum].rights[1].id = 2;
+                PolicyNum = PolicyNum + 1;      
+            :: else -> printf("Deny\n");
+        fi;
+    }
+}
 
 /******************** OPERATIONS *************************/
 
@@ -795,6 +870,8 @@ proctype ProcessHost(){
     bool repetitive_Huawei_speaker_SHARE = false;
     bool repetitive_Huawei_speaker_REVOKE = false;
     bool repetitive_MiHome_smart_speaker_SHARE = false;
+    bool repetitive_Google_home_SHARE = false;
+    bool repetitive_Google_home_REVOKE = false;
 
     do
         // :: Yunmai_smart_scale_SHARE(host, guest, Devices[0].id);
@@ -854,12 +931,29 @@ proctype ProcessHost(){
         //         fi;
         //     }
 
+        // :: 
+        //     atomic{
+        //         if
+        //             :: (repetitive_MiHome_smart_speaker_SHARE == false) ->
+        //                 repetitive_MiHome_smart_speaker_SHARE = true;
+        //                 MiHome_smart_speaker_SHARE(host, guest, Devices[4].id);
+        //         fi;
+        //     }
+
         :: 
             atomic{
                 if
-                    :: (repetitive_MiHome_smart_speaker_SHARE == false) ->
-                        repetitive_MiHome_smart_speaker_SHARE = true;
-                        MiHome_smart_speaker_SHARE(host, guest, Devices[4].id);
+                    :: (repetitive_Google_home_SHARE == false) ->
+                        repetitive_Google_home_SHARE = true;
+                        Google_home_SHARE(host, guest, Devices[5].id);
+                fi;
+            }
+        :: 
+            atomic{
+                if
+                    :: (repetitive_Google_home_REVOKE == false) ->
+                        repetitive_Google_home_REVOKE = true;
+                        Google_home_REVOKE(host, guest, Devices[5].id);
                 fi;
             }
 
@@ -913,6 +1007,10 @@ proctype ProcessGuest(){
         //         Huawei_speaker_CREATE_AUTOMATION(guest, Devices[3].id);
         //     }
 
+        ::             
+            atomic{
+                Google_home_LINK_THIRDPARTY_SERVICE(guest, Devices[5].id);
+            }
 
         :: else -> break;
     od;
@@ -988,6 +1086,13 @@ init
         // MiHome smart speaker
         ///////////////////////
         Devices[4].id = 4;
+        Devices[4].resources[0].id = 5;
+
+
+        ///////////////////////
+        // google home
+        ///////////////////////
+        Devices[5].id = 4;
         Devices[4].resources[0].id = 5;
 
         /******************** Default Policies *************************/
@@ -1132,15 +1237,15 @@ init
         // // MiHome smart speaker
         // ///////////////////////
 
-        // DefaultPolicy	camera_state	[MiHome]	[Client_owner]	[View, Control]
-        Devices[4].canChangeState[Devices[4].canChangeStateNum].id = PolicyNum
-        Devices[4].canChangeStateNum = Devices[4].canChangeStateNum + 1;
-        Policies[PolicyNum].id = PolicyNum;
-        Policies[PolicyNum].resource.id = 6;    
-        Policies[PolicyNum].chans[0].id = 0;
-        Policies[PolicyNum].subs[0].id = host;
-        Policies[PolicyNum].rights[0].id = 4;
-        PolicyNum = PolicyNum + 1;
+        // // DefaultPolicy	camera_state	[MiHome]	[Client_owner]	[View, Control]
+        // Devices[4].canChangeState[Devices[4].canChangeStateNum].id = PolicyNum
+        // Devices[4].canChangeStateNum = Devices[4].canChangeStateNum + 1;
+        // Policies[PolicyNum].id = PolicyNum;
+        // Policies[PolicyNum].resource.id = 6;    
+        // Policies[PolicyNum].chans[0].id = 0;
+        // Policies[PolicyNum].subs[0].id = host;
+        // Policies[PolicyNum].rights[0].id = 4;
+        // PolicyNum = PolicyNum + 1;
         
     }
     // host: {userId = 1}
