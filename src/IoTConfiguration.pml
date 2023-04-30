@@ -99,7 +99,6 @@ Policy Policies[MAXPOLICY];
 
 short PolicyNum = 0;
 
-bool remote_test = false;
 
 // Check the policy constraints
 inline check_policy(_res, channel_id, user_id, right_id){
@@ -450,12 +449,6 @@ inline Philips_bridge_REMOTECONTROl_ON(user_id, device_id){
                 Policies[PolicyNum].rights[1].id = 1;
                 Policies[PolicyNum].rights[2].id = 2;
                 PolicyNum = PolicyNum + 1;       
-
-                if
-                    :: (user_id == guest) ->
-                        remote_test = true;
-                    :: else -> skip;
-                fi;
             :: else -> 
                 printf("Deny\n");
         fi;
@@ -696,6 +689,30 @@ inline Operation_read_accesslist(user_id, device_id){
 }
 
 
+// resource: 4
+inline Operation_control_subdevicelist(user_id, device_id){
+    atomic{
+        printf("user_%d control SubDeviceList of device_%d\n", user_id, device_id);
+                                                
+        check_policy_result = false;
+        // {resource:4, channel_id: mihome, user_id:, right_id: remove}
+        res_need_check.id = 4;                                   
+        check_policy(res_need_check, 0, user_id, 2)
+        if
+            ::  (check_policy_result == true) -> 
+                printf("Allow\n")
+                assert(user_id == host);
+                
+            :: else ->
+                printf("Deny\n") 
+        fi;        
+
+    }
+}
+
+
+
+
 
 // inline SecurityProperties(user_id){
 //     atomic{
@@ -751,7 +768,7 @@ proctype ProcessHost(){
         :: 
             atomic{
                 if
-                    :: (COMPLETE_Operation_read_accesslist == false && COMPETE_Philips_bridge_SHARE == true && remote_test == true) ->
+                    :: (COMPLETE_Operation_read_accesslist == false) ->
                         COMPLETE_Operation_read_accesslist = true;
                         Operation_read_accesslist(host, Devices[1].id);
                 fi;
