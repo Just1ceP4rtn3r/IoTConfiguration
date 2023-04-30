@@ -566,6 +566,7 @@ inline Huawei_speaker_REVOKE(user_A, user_B, device_id){
             :: else -> break;
         od;  
         
+        
         Operation_After_Revoke(user_B, device_id)
 
     }
@@ -601,8 +602,10 @@ inline Huawei_speaker_CREATE_AUTOMATION(user_id, device_id){
 /******************** MiHome smart speaker *************************/
 inline MiHome_smart_speaker_SHARE(user_A, user_B, device_id){
     atomic{
-        printf("'MiHome smart speaker': Share (user_%d → user_%d) in 'MiHome app'\n", user_A, user_B);
-        skip
+        printf("'MiHome smart speaker': Share (user_%d → user_%d) in 'MiHome app'\n", user_A, user_B);    
+        
+         Operation_Control_camera(user_A, device_id);
+    
     }
 }
 
@@ -612,6 +615,7 @@ inline MiHome_smart_speaker_SHARE(user_A, user_B, device_id){
 
 /******************** OPERATIONS *************************/
 
+// Property
 inline Operation_read_personaldata(user_id, device_id){
     atomic{
         i = 0;
@@ -646,6 +650,7 @@ inline Operation_read_personaldata(user_id, device_id){
     }
 }
 
+// Property
 inline Operation_read_accesslist(user_id, device_id){
     atomic{
         i = 0;
@@ -693,7 +698,7 @@ inline Operation_read_accesslist(user_id, device_id){
     }
 }
 
-
+// Property
 inline Operation_control_subdevicelist(user_id, device_id){
     atomic{
         printf("user_%d control SubDeviceList of device_%d\n", user_id, device_id);
@@ -714,7 +719,7 @@ inline Operation_control_subdevicelist(user_id, device_id){
     }
 }
 
-
+// Property: user_B should not be able to control the device after revocation
 inline Operation_After_Revoke(user_id, device_id){
     atomic{
         printf("After Revocation\n", user_id, device_id);
@@ -735,6 +740,26 @@ inline Operation_After_Revoke(user_id, device_id){
     }
 }
 
+
+// Property: user_A should not be able to control the camera after sharing       
+inline Operation_Control_camera(user_id, device_id){
+    atomic{
+        printf("user_%d control camera state of device_%d\n", user_id, device_id);
+                                                
+        check_policy_result = false;
+        // {resource:6, channel_id: mihome, user_id:, right_id: remove}
+        res_need_check.id = 6;                                   
+        check_policy(res_need_check, 0, user_id, 4)
+        if
+            ::  (check_policy_result == true) -> 
+                printf("Allow\n")
+                assert(user_id != host);
+                
+            :: else ->
+                printf("Deny\n") 
+        fi;        
+    }
+}
 
 
 // inline SecurityProperties(user_id){
@@ -763,12 +788,13 @@ proctype ProcessHost(){
     bool check_policy_result = false;
     Resource res_need_check;
 
-    bool COMPETE_Philips_bridge_SHARE = false;
-    bool COMPETE_Philips_bridge_REMOTECONTROl_ON = false;
-    bool COMPLETE_Operation_read_accesslist = false;
-    bool COMPETE_Aqara_hub_SHARE = false;
-    bool COMPETE_Huawei_speaker_SHARE = false;
-    bool COMPETE_Huawei_speaker_REVOKE = false;
+    bool repetitive_Philips_bridge_SHARE = false;
+    bool repetitive_Philips_bridge_REMOTECONTROl_ON = false;
+    bool repetitive_Operation_read_accesslist = false;
+    bool repetitive_Aqara_hub_SHARE = false;
+    bool repetitive_Huawei_speaker_SHARE = false;
+    bool repetitive_Huawei_speaker_REVOKE = false;
+    bool repetitive_MiHome_smart_speaker_SHARE = false;
 
     do
         // :: Yunmai_smart_scale_SHARE(host, guest, Devices[0].id);
@@ -778,24 +804,24 @@ proctype ProcessHost(){
         // :: 
         //     atomic{
         //         if
-        //             :: (COMPETE_Philips_bridge_SHARE == false) ->
-        //                 COMPETE_Philips_bridge_SHARE = true;
+        //             :: (repetitive_Philips_bridge_SHARE == false) ->
+        //                 repetitive_Philips_bridge_SHARE = true;
         //                 Philips_bridge_SHARE(host, guest, Devices[1].id);
         //         fi;
         //     }
         // ::             
         //     atomic{
         //         if
-        //             :: (COMPETE_Philips_bridge_REMOTECONTROl_ON == false) ->
-        //                 COMPETE_Philips_bridge_REMOTECONTROl_ON = true;
+        //             :: (repetitive_Philips_bridge_REMOTECONTROl_ON == false) ->
+        //                 repetitive_Philips_bridge_REMOTECONTROl_ON = true;
         //                 Philips_bridge_REMOTECONTROl_ON(host, Devices[1].id);
         //         fi;
         //     }
         // :: 
         //     atomic{
         //         if
-        //             :: (COMPLETE_Operation_read_accesslist == false) ->
-        //                 COMPLETE_Operation_read_accesslist = true;
+        //             :: (repetitive_Operation_read_accesslist == false) ->
+        //                 repetitive_Operation_read_accesslist = true;
         //                 Operation_read_accesslist(host, Devices[1].id);
         //         fi;
         //     }
@@ -804,29 +830,39 @@ proctype ProcessHost(){
         // :: 
         //     atomic{
         //         if
-        //             :: (COMPETE_Philips_bridge_SHARE == false) ->
-        //                 COMPETE_Philips_bridge_SHARE = true;
+        //             :: (repetitive_Philips_bridge_SHARE == false) ->
+        //                 repetitive_Philips_bridge_SHARE = true;
         //                 Aqara_hub_SHARE(host, guest, Devices[2].id);
         //         fi;
         //     }
 
 
+        // :: 
+        //     atomic{
+        //         if
+        //             :: (repetitive_Huawei_speaker_SHARE == false) ->
+        //                 repetitive_Huawei_speaker_SHARE = true;
+        //                 Huawei_speaker_SHARE(host, guest, Devices[3].id);
+        //         fi;
+        //     }
+        // :: 
+        //     atomic{
+        //         if
+        //             :: (repetitive_Huawei_speaker_REVOKE == false) ->
+        //                 repetitive_Huawei_speaker_REVOKE = true;
+        //                 Huawei_speaker_REVOKE(host, guest, Devices[3].id);
+        //         fi;
+        //     }
+
         :: 
             atomic{
                 if
-                    :: (COMPETE_Huawei_speaker_SHARE == false) ->
-                        COMPETE_Huawei_speaker_SHARE = true;
-                        Huawei_speaker_SHARE(host, guest, Devices[3].id);
+                    :: (repetitive_MiHome_smart_speaker_SHARE == false) ->
+                        repetitive_MiHome_smart_speaker_SHARE = true;
+                        MiHome_smart_speaker_SHARE(host, guest, Devices[4].id);
                 fi;
             }
-        :: 
-            atomic{
-                if
-                    :: (COMPETE_Huawei_speaker_REVOKE == false) ->
-                        COMPETE_Huawei_speaker_REVOKE = true;
-                        Huawei_speaker_REVOKE(host, guest, Devices[3].id);
-                fi;
-            }
+
         :: else -> break;
     od;
 }
@@ -850,7 +886,7 @@ proctype ProcessGuest(){
     Resource res_need_check;
 
 
-    bool COMPETE_Philips_bridge_REMOTECONTROl_ON = false;
+    bool repetitive_Philips_bridge_REMOTECONTROl_ON = false;
     do
         // :: Yunmai_smart_scale_GUESTMODE(guest, Devices[0].id, true);
         // :: Operation_read_personaldata(guest, Devices[0].id);
@@ -859,8 +895,8 @@ proctype ProcessGuest(){
         // :: 
             // atomic{
             //     if
-            //         :: (COMPETE_Philips_bridge_REMOTECONTROl_ON == false) ->
-            //             COMPETE_Philips_bridge_REMOTECONTROl_ON = true;
+            //         :: (repetitive_Philips_bridge_REMOTECONTROl_ON == false) ->
+            //             repetitive_Philips_bridge_REMOTECONTROl_ON = true;
             //             Philips_bridge_REMOTECONTROl_ON(guest, Devices[1].id);
             //     fi;
             // }
@@ -872,11 +908,12 @@ proctype ProcessGuest(){
         //     }
 
 
-        ::             
-            atomic{
-                Huawei_speaker_CREATE_AUTOMATION(guest, Devices[3].id);
-            }
-        
+        // ::             
+        //     atomic{
+        //         Huawei_speaker_CREATE_AUTOMATION(guest, Devices[3].id);
+        //     }
+
+
         :: else -> break;
     od;
 
@@ -1066,46 +1103,44 @@ init
         // // Huawei speaker
         // ///////////////////////
 
-        // DefaultPolicy	history[client_*]	[HuaWei Smart Home]	[Client_owner]	[View, Control]
-        Policies[PolicyNum].id = PolicyNum;
-        Policies[PolicyNum].resource.id = 3;    
-        Policies[PolicyNum].resource.history.userId = ALLUSERS;
-        Policies[PolicyNum].chans[0].id = 5;
-        Policies[PolicyNum].subs[0].id = host;
-        Policies[PolicyNum].rights[0].id = 0;
-        Policies[PolicyNum].rights[1].id = 1;
-        Policies[PolicyNum].rights[2].id = 2;
-        PolicyNum = PolicyNum + 1;
+        // // DefaultPolicy	history[client_*]	[HuaWei Smart Home]	[Client_owner]	[View, Control]
+        // Policies[PolicyNum].id = PolicyNum;
+        // Policies[PolicyNum].resource.id = 3;    
+        // Policies[PolicyNum].resource.history.userId = ALLUSERS;
+        // Policies[PolicyNum].chans[0].id = 5;
+        // Policies[PolicyNum].subs[0].id = host;
+        // Policies[PolicyNum].rights[0].id = 0;
+        // Policies[PolicyNum].rights[1].id = 1;
+        // Policies[PolicyNum].rights[2].id = 2;
+        // PolicyNum = PolicyNum + 1;
 
 
-        // DefaultPolicy	speaker_state (volumn，content)	[HuaWei Smart Home, Huawei speaker]	ALL	[View, Control]
-        Devices[3].canChangeState[Devices[3].canChangeStateNum].id = PolicyNum
-        Devices[3].canChangeStateNum = Devices[3].canChangeStateNum + 1;
-        Policies[PolicyNum].id = PolicyNum;
-        Policies[PolicyNum].resource.id = 5;    
-        Policies[PolicyNum].chans[0].id = 5;
-        Policies[PolicyNum].subs[0].id = host;
-        Policies[PolicyNum].rights[0].id = 0;
-        Policies[PolicyNum].rights[1].id = 1;
-        Policies[PolicyNum].rights[2].id = 2;
-        PolicyNum = PolicyNum + 1;
+        // // DefaultPolicy	speaker_state (volumn，content)	[HuaWei Smart Home, Huawei speaker]	ALL	[View, Control]
+        // Devices[3].canChangeState[Devices[3].canChangeStateNum].id = PolicyNum
+        // Devices[3].canChangeStateNum = Devices[3].canChangeStateNum + 1;
+        // Policies[PolicyNum].id = PolicyNum;
+        // Policies[PolicyNum].resource.id = 5;    
+        // Policies[PolicyNum].chans[0].id = 5;
+        // Policies[PolicyNum].subs[0].id = host;
+        // Policies[PolicyNum].rights[0].id = 0;
+        // Policies[PolicyNum].rights[1].id = 1;
+        // Policies[PolicyNum].rights[2].id = 2;
+        // PolicyNum = PolicyNum + 1;
 
 
         // ///////////////////////
         // // MiHome smart speaker
         // ///////////////////////
 
-        // // DefaultPolicy	camera_state	[MiHome]	[Client_owner]	[View, Control]
-        // Devices[4].canChangeState[Devices[4].canChangeStateNum].id = PolicyNum
-        // Devices[4].canChangeStateNum = Devices[4].canChangeStateNum + 1;
-        // Policies[PolicyNum].id = PolicyNum;
-        // Policies[PolicyNum].resource.id = 5;    
-        // Policies[PolicyNum].chans[0].id = 0;
-        // Policies[PolicyNum].subs[0].id = host;
-        // Policies[PolicyNum].rights[0].id = 0;
-        // Policies[PolicyNum].rights[1].id = 1;
-        // Policies[PolicyNum].rights[2].id = 2;
-        // PolicyNum = PolicyNum + 1;
+        // DefaultPolicy	camera_state	[MiHome]	[Client_owner]	[View, Control]
+        Devices[4].canChangeState[Devices[4].canChangeStateNum].id = PolicyNum
+        Devices[4].canChangeStateNum = Devices[4].canChangeStateNum + 1;
+        Policies[PolicyNum].id = PolicyNum;
+        Policies[PolicyNum].resource.id = 6;    
+        Policies[PolicyNum].chans[0].id = 0;
+        Policies[PolicyNum].subs[0].id = host;
+        Policies[PolicyNum].rights[0].id = 4;
+        PolicyNum = PolicyNum + 1;
         
     }
     // host: {userId = 1}
