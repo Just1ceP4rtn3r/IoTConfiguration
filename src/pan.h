@@ -1,10 +1,10 @@
 #ifndef PAN_H
 #define PAN_H
 
-#define SpinVersion	"Spin Version 6.5.1 -- 31 July 2020"
-#define PanSource	".\\IoTConfiguration.pml"
+#define SpinVersion	"Spin Version 6.5.2 -- 30 May 2023"
+#define PanSource	"IoTConfiguration.pml"
 
-#define G_long	4
+#define G_long	8
 #define G_int	4
 
 #define ulong	unsigned long
@@ -132,20 +132,20 @@ typedef struct S_F_MAP {
 	int upto;
 } S_F_MAP;
 
-#define _nstates2	25	/* :init: */
-#define minseq2	507
-#define maxseq2	530
-#define _endstate2	24
+#define _nstates2	67	/* :init: */
+#define minseq2	2598
+#define maxseq2	2663
+#define _endstate2	66
 
-#define _nstates1	178	/* ProcessGuest */
-#define minseq1	330
-#define maxseq1	506
-#define _endstate1	177
+#define _nstates1	991	/* ProcessGuest */
+#define minseq1	1608
+#define maxseq1	2597
+#define _endstate1	990
 
-#define _nstates0	331	/* ProcessHost */
+#define _nstates0	1609	/* ProcessHost */
 #define minseq0	0
-#define maxseq0	329
-#define _endstate0	330
+#define maxseq0	1607
+#define _endstate0	1608
 
 extern short src_ln2[];
 extern short src_ln1[];
@@ -155,9 +155,9 @@ extern S_F_MAP src_file1[];
 extern S_F_MAP src_file0[];
 
 #define T_ID	unsigned short
-#define _T5	159
-#define _T2	160
-#define WS		4 /* word size in bytes */
+#define _T5	819
+#define _T2	820
+#define WS		8 /* word size in bytes */
 #define SYNC	0
 #define ASYNC	0
 
@@ -200,15 +200,16 @@ struct Policy { /* user defined type */
 	unsigned banned : 1;
 	short id;
 	struct Resource resource;
-	struct Channel chans[20];
-	struct Subject subs[20];
-	struct Right rights[20];
+	struct Channel chans[2];
+	struct Subject subs[2];
+	struct Right rights[5];
 };
 struct PolicyBeRevoked { /* user defined type */
 	short id;
 };
-struct Device { /* user defined type */
+struct IoTDevice { /* user defined type */
 	short id;
+	short canBeRevokedNum;
 	struct PolicyBeRevoked canBeRevoked[50];
 	struct Resource resources[20];
 };
@@ -216,7 +217,7 @@ struct Device { /* user defined type */
 typedef struct P2 { /* :init: */
 	unsigned _pid : 8;  /* 0..255 */
 	unsigned _t   : 3; /* proctype */
-	unsigned _p   : 10; /* state    */
+	unsigned _p   : 12; /* state    */
 #ifdef HAS_PRIORITY
 	unsigned _priority : 8; /* 0..255 */
 #endif
@@ -227,7 +228,7 @@ typedef struct P2 { /* :init: */
 typedef struct P1 { /* ProcessGuest */
 	unsigned _pid : 8;  /* 0..255 */
 	unsigned _t   : 3; /* proctype */
-	unsigned _p   : 10; /* state    */
+	unsigned _p   : 12; /* state    */
 #ifdef HAS_PRIORITY
 	unsigned _priority : 8; /* 0..255 */
 #endif
@@ -235,9 +236,21 @@ typedef struct P1 { /* ProcessGuest */
 	unsigned flag_2 : 1;
 	unsigned flag_3 : 1;
 	unsigned check_policy_result : 1;
+	unsigned COMPETE_guest_1 : 1;
+	unsigned COMPETE_guest_2 : 1;
+	unsigned COMPETE_guest_3 : 1;
+	unsigned COMPETE_guest_Aqara_hub_SHARE : 1;
+	unsigned COMPETE_guest_Aqara_hub_REVOKE : 1;
+	unsigned COMPETE_guest_Aqara_hub_CREATE_AUTOMATION : 1;
+	unsigned COMPETE_guest_Aqara_hub_CREATE_AUTOMATION_alert : 1;
 	int i;
 	int j;
 	int k;
+	int l;
+	int m;
+	int n;
+	int o;
+	int p;
 	struct Resource res_need_check;
 } P1;
 #define Air1	0
@@ -246,7 +259,7 @@ typedef struct P1 { /* ProcessGuest */
 typedef struct P0 { /* ProcessHost */
 	unsigned _pid : 8;  /* 0..255 */
 	unsigned _t   : 3; /* proctype */
-	unsigned _p   : 10; /* state    */
+	unsigned _p   : 12; /* state    */
 #ifdef HAS_PRIORITY
 	unsigned _priority : 8; /* 0..255 */
 #endif
@@ -254,10 +267,21 @@ typedef struct P0 { /* ProcessHost */
 	unsigned flag_2 : 1;
 	unsigned flag_3 : 1;
 	unsigned check_policy_result : 1;
-	short _10_1_1_Yunmai_smart_scale_can_revoked[3];
+	unsigned COMPETE_host_1 : 1;
+	unsigned COMPETE_host_2 : 1;
+	unsigned COMPETE_host_3 : 1;
+	unsigned COMPETE_host_Aqara_hub_SHARE : 1;
+	unsigned COMPETE_host_Aqara_hub_REVOKE : 1;
+	unsigned COMPETE_host_Aqara_hub_CREATE_AUTOMATION : 1;
+	unsigned COMPETE_host_Aqara_hub_CREATE_AUTOMATION_alert : 1;
 	int i;
 	int j;
 	int k;
+	int l;
+	int m;
+	int n;
+	int o;
+	int p;
 	struct Resource res_need_check;
 } P0;
 #define Air0	0
@@ -265,7 +289,7 @@ typedef struct P0 { /* ProcessHost */
 typedef struct P3 { /* np_ */
 	unsigned _pid : 8;  /* 0..255 */
 	unsigned _t   : 3; /* proctype */
-	unsigned _p   : 10; /* state    */
+	unsigned _p   : 12; /* state    */
 #ifdef HAS_PRIORITY
 	unsigned _priority : 8; /* 0..255 */
 #endif
@@ -462,9 +486,9 @@ typedef struct State {
 		unsigned short _event;
 	#endif
 #endif
-	short Users[2];
 	short PolicyNum;
-	struct Device Devices[20];
+	short Shared;
+	struct IoTDevice Device;
 	struct Policy Policies[50];
 #ifdef TRIX
 	/* room for 512 proc+chan ptrs, + safety margin */
@@ -487,6 +511,7 @@ typedef struct TRIX_v6 {
 #endif
 
 #define HAS_TRACK	0
+/* hidden variable: */	short Users[2];
 #define FORWARD_MOVES	"pan.m"
 #define BACKWARD_MOVES	"pan.b"
 #define TRANSITIONS	"pan.t"
@@ -495,9 +520,9 @@ typedef struct TRIX_v6 {
 #define _endstate3	2 /* np_ */
 
 #define _start3	0 /* np_ */
-#define _start2	22
-#define _start1	174
-#define _start0	327
+#define _start2	63
+#define _start1	987
+#define _start0	1605
 #ifdef NP
 	#define ACCEPT_LAB	1 /* at least 1 in np_ */
 #else
@@ -857,7 +882,7 @@ void qsend(int, int, int);
 #define GLOBAL	7
 #define BAD	8
 #define ALPHA_F	9
-#define NTRANS	161
+#define NTRANS	821
 #if defined(BFS_PAR) || NCORE>1
 	void e_critical(int);
 	void x_critical(int);

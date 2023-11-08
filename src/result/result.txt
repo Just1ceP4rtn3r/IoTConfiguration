@@ -1,0 +1,135 @@
+pan:1: assertion violated (2==1) (at depth 418)
+pan: wrote IoTConfiguration.pml1.trail
+pan: wrote IoTConfiguration.pml2.trail
+pan: wrote IoTConfiguration.pml3.trail
+pan: wrote IoTConfiguration.pml4.trail
+pan: wrote IoTConfiguration.pml5.trail
+pan: wrote IoTConfiguration.pml6.trail
+pan: wrote IoTConfiguration.pml7.trail
+pan: wrote IoTConfiguration.pml8.trail
+pan: wrote IoTConfiguration.pml9.trail
+pan: wrote IoTConfiguration.pml10.trail
+pan: wrote IoTConfiguration.pml11.trail
+pan: wrote IoTConfiguration.pml12.trail
+pan: wrote IoTConfiguration.pml13.trail
+pan: wrote IoTConfiguration.pml14.trail
+pan: wrote IoTConfiguration.pml15.trail
+pan: wrote IoTConfiguration.pml16.trail
+pan: wrote IoTConfiguration.pml17.trail
+pan: wrote IoTConfiguration.pml18.trail
+pan: wrote IoTConfiguration.pml19.trail
+pan: wrote IoTConfiguration.pml20.trail
+pan: wrote IoTConfiguration.pml21.trail
+pan: wrote IoTConfiguration.pml22.trail
+pan: wrote IoTConfiguration.pml23.trail
+pan: wrote IoTConfiguration.pml24.trail
+pan: wrote IoTConfiguration.pml25.trail
+pan: wrote IoTConfiguration.pml26.trail
+pan: wrote IoTConfiguration.pml27.trail
+pan: wrote IoTConfiguration.pml28.trail
+pan: wrote IoTConfiguration.pml29.trail
+pan: wrote IoTConfiguration.pml30.trail
+pan: wrote IoTConfiguration.pml31.trail
+pan: wrote IoTConfiguration.pml32.trail
+pan: wrote IoTConfiguration.pml33.trail
+pan: wrote IoTConfiguration.pml34.trail
+pan: wrote IoTConfiguration.pml35.trail
+pan: wrote IoTConfiguration.pml36.trail
+pan: wrote IoTConfiguration.pml37.trail
+pan: wrote IoTConfiguration.pml38.trail
+pan: wrote IoTConfiguration.pml39.trail
+pan: wrote IoTConfiguration.pml40.trail
+pan: wrote IoTConfiguration.pml41.trail
+pan: wrote IoTConfiguration.pml42.trail
+pan: wrote IoTConfiguration.pml43.trail
+pan: wrote IoTConfiguration.pml44.trail
+pan: wrote IoTConfiguration.pml45.trail
+pan: wrote IoTConfiguration.pml46.trail
+pan: wrote IoTConfiguration.pml47.trail
+pan: wrote IoTConfiguration.pml48.trail
+pan: wrote IoTConfiguration.pml49.trail
+pan: wrote IoTConfiguration.pml50.trail
+pan: wrote IoTConfiguration.pml51.trail
+pan: wrote IoTConfiguration.pml52.trail
+pan: wrote IoTConfiguration.pml53.trail
+pan: wrote IoTConfiguration.pml54.trail
+pan: wrote IoTConfiguration.pml55.trail
+pan: wrote IoTConfiguration.pml56.trail
+pan: wrote IoTConfiguration.pml57.trail
+pan: wrote IoTConfiguration.pml58.trail
+pan: wrote IoTConfiguration.pml59.trail
+pan: wrote IoTConfiguration.pml60.trail
+pan: wrote IoTConfiguration.pml61.trail
+pan: wrote IoTConfiguration.pml62.trail
+pan: wrote IoTConfiguration.pml63.trail
+pan: wrote IoTConfiguration.pml64.trail
+pan: wrote IoTConfiguration.pml65.trail
+pan: wrote IoTConfiguration.pml66.trail
+pan: wrote IoTConfiguration.pml67.trail
+pan: wrote IoTConfiguration.pml68.trail
+pan: wrote IoTConfiguration.pml69.trail
+pan: wrote IoTConfiguration.pml70.trail
+pan: wrote IoTConfiguration.pml71.trail
+pan: wrote IoTConfiguration.pml72.trail
+pan: wrote IoTConfiguration.pml73.trail
+pan: wrote IoTConfiguration.pml74.trail
+pan: wrote IoTConfiguration.pml75.trail
+pan: wrote IoTConfiguration.pml76.trail
+pan: wrote IoTConfiguration.pml77.trail
+pan: wrote IoTConfiguration.pml78.trail
+pan: wrote IoTConfiguration.pml79.trail
+pan: wrote IoTConfiguration.pml80.trail
+pan: wrote IoTConfiguration.pml81.trail
+pan: wrote IoTConfiguration.pml82.trail
+pan: wrote IoTConfiguration.pml83.trail
+pan: wrote IoTConfiguration.pml84.trail
+pan: wrote IoTConfiguration.pml85.trail
+pan: wrote IoTConfiguration.pml86.trail
+pan: wrote IoTConfiguration.pml87.trail
+pan: wrote IoTConfiguration.pml88.trail
+pan: wrote IoTConfiguration.pml89.trail
+pan: wrote IoTConfiguration.pml90.trail
+pan: wrote IoTConfiguration.pml91.trail
+pan: wrote IoTConfiguration.pml92.trail
+pan: wrote IoTConfiguration.pml93.trail
+pan: wrote IoTConfiguration.pml94.trail
+pan: wrote IoTConfiguration.pml95.trail
+pan: wrote IoTConfiguration.pml96.trail
+pan: wrote IoTConfiguration.pml97.trail
+pan: wrote IoTConfiguration.pml98.trail
+pan: wrote IoTConfiguration.pml99.trail
+pan: wrote IoTConfiguration.pml100.trail
+
+(Spin Version 6.5.2 -- 30 May 2023)
+Warning: Search not completed
+	+ Partial Order Reduction
+
+Bit statespace search for:
+	never claim         	- (not selected)
+	assertion violations	+
+	cycle checks       	- (disabled by -DSAFETY)
+	invalid end states	- (disabled by -E flag)
+
+State-vector 2276 byte, depth reached 832, errors: 100
+    41924 states, stored
+   347100 states, matched
+   389024 transitions (= stored+matched)
+ 20816052 atomic steps
+
+hash factor: 3201.45 (best if > 100.)
+
+bits set per state: 3 (-k3)
+
+Stats on memory usage (in Megabytes):
+   91.798	equivalent memory usage for states (stored*(State-vector + overhead))
+   16.000	memory used for hash array (-w27)
+    0.015	memory used for bit stack
+    0.107	memory used for DFS stack (-m2000)
+    1.841	other (proc and chan stacks)
+    1.161	memory lost to fragmentation
+   19.124	total actual memory usage
+
+
+
+pan: elapsed time 1.58 seconds
+pan: rate 26534.177 states/second
