@@ -31,4 +31,4 @@ class TestAppium(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    unittest.main()
+    driver = webdriver.Remote(appium_server_url, options=capabilities)
