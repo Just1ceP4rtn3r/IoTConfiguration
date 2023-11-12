@@ -1,14 +1,17 @@
 import unittest
 from appium import webdriver
 from appium.webdriver.common.appiumby import AppiumBy
+from appium.options.common.base import AppiumOptions
 
-capabilities = dict(platformName='Android',
-                    automationName='uiautomator2',
-                    udid='192.168.72.1:21503',
-                    appPackage='io.appium.android.apis',
-                    appActivity='io.appium.android.apis.ApiDemos',
-                    noReset=True,
-                    fullReset=False)
+capabilities = AppiumOptions()
+capabilities.load_capabilities(
+    dict(platformName='Android',
+         automationName='uiautomator2',
+         udid='192.168.72.1:21503',
+         appPackage='io.appium.android.apis',
+         appActivity='io.appium.android.apis.ApiDemos',
+         noReset=True,
+         fullReset=False))
 
 appium_server_url = 'http://localhost:4723'
 
