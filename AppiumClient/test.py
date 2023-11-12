@@ -5,10 +5,10 @@ from appium.webdriver.common.appiumby import AppiumBy
 capabilities = dict(platformName='Android',
                     automationName='uiautomator2',
                     deviceName='Android',
-                    appPackage='com.android.settings',
-                    appActivity='.Settings',
-                    language='en',
-                    locale='US')
+                    appPackage='io.appium.android.apis',
+                    appActivity='io.appium.android.apis.ApiDemos',
+                    noReset=True,
+                    fullReset=False)
 
 appium_server_url = 'http://localhost:4723'
 
