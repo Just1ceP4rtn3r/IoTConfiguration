@@ -4,7 +4,7 @@ from appium.webdriver.common.appiumby import AppiumBy
 
 capabilities = dict(platformName='Android',
                     automationName='uiautomator2',
-                    deviceName='Android',
+                    udid='192.168.72.1:21503g',
                     appPackage='io.appium.android.apis',
                     appActivity='io.appium.android.apis.ApiDemos',
                     noReset=True,
