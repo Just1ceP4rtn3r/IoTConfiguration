@@ -19,7 +19,7 @@ appium_server_url = 'http://localhost:4723'
 class TestAppium(unittest.TestCase):
 
     def setUp(self) -> None:
-        self.driver = webdriver.Remote(appium_server_url, capabilities)
+        self.driver = webdriver.Remote(appium_server_url, options=capabilities)
 
     def tearDown(self) -> None:
         if self.driver:
