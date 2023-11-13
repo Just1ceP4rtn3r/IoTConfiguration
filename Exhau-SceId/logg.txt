@@ -1,0 +1,1277 @@
+[+] We will write mylog messages for here: /home/syc/Downloads/DEV/rebuild/log.txt
+[+] Get apks folder: /home/syc/Downloads/DEV/rebuild/apks
+[+] Get result folder: /home/syc/Downloads/DEV/rebuild/result
+[+] find 1 : com.gaurav.avnc_14.apk
+[+] Total apks: 1
+------------------------------
+[~] Start Run:  /home/syc/Downloads/DEV/rebuild/apks/com.gaurav.avnc_14.apk
+------------------------------
+[+] get defined pkg name:  com.gaurav.avnc
+[+] get version Code:  14
+[-] don't get launcher
+[+] Get AAPT Info!
+[+] set project id:  com.gaurav.avnc-14
+[+] set project result dir:  /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14
+[+] creat new project:  com.gaurav.avnc-14
+[+] Build pkg_up_list:  {'com.gaurav.avnc': []}
+[+] Apktools has already performed the unpacking
+========== Repack apk file of 'com.gaurav.avnc-14.apk' ==========
+[+] manifestPath:  /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/unpack/AndroidManifest.xml
+[+] Find a Activity Node!
+[+] This act have attr exported
+[+] this activity add action
+[+] Find a Activity Node!
+[+] This act have attr exported
+[+] this activity add action
+[+] Find a Activity Node!
+[+] This act have attr exported
+[+] this activity add action
+[+] Find a Activity Node!
+[+] This act have attr exported
+[+] this activity add action
+[+] Find a Activity Node!
+[+] This act have attr exported
+[+] this activity add action
+[+] Find a Activity Node!
+[+] This act have attr exported
+[+] this activity add action
+[+] Find a Activity Node!
+[+] This act have attr exported
+[+] this activity add action
+[+] Find a Activity Node!
+[+] This act have attr exported
+[+] this activity add action
+[+] Find a Activity Node!
+[+] This act have attr exported
+[+] this activity add action
+[#] repkg cmd:  apktool b /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/unpack --use-aapt2
+[+] repkg success:  com.gaurav.avnc-14
+[+] find key success:  com.gaurav.avnc_14.apk
+/home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/unpack/dist
+/home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/unpack
+/home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/unpack/dist/com.gaurav.avnc_14.apk
+[+] find repkg success:  com.gaurav.avnc_14.apk
+[#] sign apk name:  com.gaurav.avnc_14_sign.apk
+[#] sign cmd:  echo 'sigh987yu' | jarsigner -verbose -keystore  watson.keystore -signedjar /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/unpack/dist/com.gaurav.avnc_14_sign.apk /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/unpack/dist/com.gaurav.avnc_14.apk  watson.keystore  
+[+] find sign apk success:  com.gaurav.avnc_14_sign.apk
+[#] align apk name:  com.gaurav.avnc_14.apk
+[+] find align apk success:  com.gaurav.avnc_14.apk
+[+] All PKG repkg work kill!
+###################################
+[~]p_id:  com.gaurav.avnc-14
+[~]res_dir:  /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14
+[~]version:  14
+[~]apk_name:  com.gaurav.avnc_14.apk
+[~]used_name:  com.gaurav.avnc
+[~]apk_path:  /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/unpack/dist/com.gaurav.avnc_14.apk
+[~]unpack_path:  /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/unpack
+[~]icc result:  /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/iccbot
+[~]activity:  []
+[~]screenlist:  set()
+###################################
+[new_icc_res]:  /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/iccbot/com.gaurav.avnc_14
+[iccbot_dir] :  /home/syc/Downloads/DEV/rebuild/enhance/icc
+[apks_dir] :  /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/unpack/dist
+[apk_name] :  com.gaurav.avnc_14.apk
+[iccjar_path] :  /home/syc/Downloads/DEV/rebuild/enhance/icc/ICCBot.jar
+[androidJar] :  /home/syc/Downloads/DEV/rebuild/enhance/icc/lib/platforms
+[outputDir] :  /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/iccbot
+timeout 20m java -jar -Xmx6g /home/syc/Downloads/DEV/rebuild/enhance/icc/ICCBot.jar  -path /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/unpack/dist  -name com.gaurav.avnc_14.apk  -androidJar  /home/syc/Downloads/DEV/rebuild/enhance/icc/lib/platforms  -time  20  -maxPathNumber  1000  -client CTGClient  -outputDir /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/iccbot 
+b'Analyzing com.gaurav.avnc_14.apk\nusing client CTGClient\nSoot Analysis finish.\nSuccessfully analyze with ManifestClient.\nCall Graph Construction finish.\nCall Graph has 23268 edges.\nCall Graph Enhancing finish.\nSuccessfully analyze with CallGraphClient.\nStaticValueAnalyzer finish.\nDynamicIntentFilterAnalyzer finish\n\nSuccessfully analyze with FragmentClient.\nThis is the method #200/5075\nThis is the method #400/5075\nThis is the method #600/5075\nThis is the method #800/5075\nThis is the method #1000/5075\nThis is the method #1200/5075\nThis is the method #1400/5075\nThis is the method #1600/5075\nThis is the method #1800/5075\nThis is the method #2000/5075\nThis is the method #2200/5075\nThis is the method #2400/5075\nThis is the method #2600/5075\nThis is the method #2800/5075\nThis is the method #3000/5075\nThis is the method #3200/5075\nThis is the method #3400/5075\nThis is the method #3600/5075\nThis is the method #3800/5075\nThis is the method #4000/5075\nThis is the method #4200/5075\nThis is the method #4400/5075\nThis is the method #4600/5075\nThis is the method #4800/5075\nThis is the method #5000/5075\nSuccessfully analyze with CTGClient.\nwriteComponentModel\nwriteMethodSummaryModel\nwritePathSummaryModel\nwriteIntentSummaryModel\nwriteAtgModeTxtFile\nwriteDotFile\nwriteATGModel\nwriteAtgModeTxtFile2\nwriteDotFile2\nwriteATGModel2\n---------------------------------------\nAnalyzing com.gaurav.avnc_14.apk Finish...\n\nCTGClient time = 99 seconds\nICC Resolution Finish...\n\n'
+timeout 20m java -jar -Xmx6g /home/syc/Downloads/DEV/rebuild/enhance/icc/ICCBot.jar  -path /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/unpack/dist  -name com.gaurav.avnc_14.apk  -androidJar  /home/syc/Downloads/DEV/rebuild/enhance/icc/lib/platforms  -time  20  -maxPathNumber  1000  -client IROutputClient  -outputDir /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/iccbot 
+b'Analyzing com.gaurav.avnc_14.apk\nusing client IROutputClient\nSoot Analysis finish.\nSuccessfully analyze with IROutputClient.\n---------------------------------------\nAnalyzing com.gaurav.avnc_14.apk Finish...\n\nIROutputClient time = 13 seconds\nICC Resolution Finish...\n\n'
+timeout 20m java -jar -Xmx6g /home/syc/Downloads/DEV/rebuild/enhance/icc/ICCBot.jar  -path /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/unpack/dist  -name com.gaurav.avnc_14.apk  -androidJar  /home/syc/Downloads/DEV/rebuild/enhance/icc/lib/platforms  -time  20  -maxPathNumber  1000  -client ICCSpecClient  -outputDir /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/iccbot 
+b'Analyzing com.gaurav.avnc_14.apk\nusing client ICCSpecClient\nSoot Analysis finish.\nSuccessfully analyze with ManifestClient.\nCall Graph Construction finish.\nCall Graph has 23268 edges.\nCall Graph Enhancing finish.\nSuccessfully analyze with CallGraphClient.\nStaticValueAnalyzer finish.\nDynamicIntentFilterAnalyzer finish\n\nSuccessfully analyze with FragmentClient.\nAnalyzing ICC sending.\nThis is the method #200/5075\nThis is the method #400/5075\nThis is the method #600/5075\nThis is the method #800/5075\nThis is the method #1000/5075\nThis is the method #1200/5075\nThis is the method #1400/5075\nThis is the method #1600/5075\nThis is the method #1800/5075\nThis is the method #2000/5075\nThis is the method #2200/5075\nThis is the method #2400/5075\nThis is the method #2600/5075\nThis is the method #2800/5075\nThis is the method #3000/5075\nThis is the method #3200/5075\nThis is the method #3400/5075\nThis is the method #3600/5075\nThis is the method #3800/5075\nThis is the method #4000/5075\nThis is the method #4200/5075\nThis is the method #4400/5075\nThis is the method #4600/5075\nThis is the method #4800/5075\nThis is the method #5000/5075\nAnalyzing ICC receiving.\nThis is the method #200/5075\nThis is the method #400/5075\nThis is the method #600/5075\nThis is the method #800/5075\nThis is the method #1000/5075\nThis is the method #1200/5075\nThis is the method #1400/5075\nThis is the method #1600/5075\nThis is the method #1800/5075\nThis is the method #2000/5075\nThis is the method #2200/5075\nThis is the method #2400/5075\nThis is the method #2600/5075\nThis is the method #2800/5075\nThis is the method #3000/5075\nThis is the method #3200/5075\nThis is the method #3400/5075\nThis is the method #3600/5075\nThis is the method #3800/5075\nThis is the method #4000/5075\nThis is the method #4200/5075\nThis is the method #4400/5075\nThis is the method #4600/5075\nThis is the method #4800/5075\nThis is the method #5000/5075\nSuccessfully analyze with ICCSpecClient.\n---------------------------------------\nAnalyzing com.gaurav.avnc_14.apk Finish...\n\nICCSpecClient time = 113 seconds\nICC Resolution Finish...\n\n'
+[#] Start init ICC OBJ
+[icc_res] :  /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/iccbot/com.gaurav.avnc_14
+[root] :  /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/iccbot/com.gaurav.avnc_14
+[CallGraphInfo] :  /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/iccbot/com.gaurav.avnc_14/CallGraphInfo
+[CTGResult] :  /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/iccbot/com.gaurav.avnc_14/CTGResult
+[FragmentInfo] :  /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/iccbot/com.gaurav.avnc_14/FragmentInfo
+[ICCSpecification] :  /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/iccbot/com.gaurav.avnc_14/ICCSpecification
+[ManifestInfo] :  /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/iccbot/com.gaurav.avnc_14/ManifestInfo
+[SootIRInfo] :  /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/iccbot/com.gaurav.avnc_14/SootIRInfo
+[-] Successfull init ICC OBJ
+###################################
+[~]p_id:  com.gaurav.avnc-14
+[~]res_dir:  /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14
+[~]version:  14
+[~]apk_name:  com.gaurav.avnc_14.apk
+[~]used_name:  com.gaurav.avnc
+[~]apk_path:  /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/unpack/dist/com.gaurav.avnc_14.apk
+[~]unpack_path:  /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/unpack
+[~]icc result:  /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/iccbot/com.gaurav.avnc_14
+[~]activity:  []
+[~]screenlist:  set()
+###################################
+[START JADX]
+R.java exists!
+[+] CTG res is exists:  /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/iccbot/com.gaurav.avnc_14/CTGResult
+[+] Soot ir is exists:  /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/iccbot/com.gaurav.avnc_14/SootIRInfo
+[+] CTG xml is exists:  /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/iccbot/com.gaurav.avnc_14/CTGResult/CTGwithFragment.xml
+[init trans]
+[source] :  com.gaurav.avnc.ui.home.UrlBarActivity
+[child] :  {'name': 'com.gaurav.avnc.ui.home.UrlBarActivity'}
+[child] :  {'name': 'com.gaurav.avnc.ui.vnc.VncActivity', 'type': 'Act2Act', 'method': '<androidx.transition.ViewGroupUtilsApi14: void startVncActivity(android.app.Activity,com.gaurav.avnc.model.ServerProfile)>', 'extras': '', 'flags': ''}
+[source] :  com.gaurav.avnc.ui.prefs.PrefsActivity
+[child] :  {'name': 'com.gaurav.avnc.ui.prefs.PrefsActivity'}
+[source] :  com.gaurav.avnc.ui.about.AboutActivity
+[child] :  {'name': 'com.gaurav.avnc.ui.about.AboutActivity'}
+[source] :  com.gaurav.avnc.ui.vnc.UriReceiverActivity
+[child] :  {'name': 'com.gaurav.avnc.ui.vnc.UriReceiverActivity'}
+[child] :  {'name': 'com.gaurav.avnc.ui.vnc.VncActivity', 'type': 'Act2Act', 'method': '<androidx.transition.ViewGroupUtilsApi14: void startVncActivity(android.app.Activity,com.gaurav.avnc.model.ServerProfile)>', 'extras': '', 'flags': ''}
+[source] :  com.gaurav.avnc.ui.vnc.VncActivity
+[child] :  {'name': 'com.gaurav.avnc.ui.vnc.VncActivity'}
+[child] :  {'name': 'com.gaurav.avnc.ui.vnc.HostKeyFragment', 'type': 'Act2Frag', 'method': '<com.gaurav.avnc.ui.vnc.VncActivity: void access$showHostKeyDialog(com.gaurav.avnc.ui.vnc.VncActivity)>'}
+[child] :  {'name': 'com.gaurav.avnc.ui.vnc.CredentialFragment', 'type': 'Act2Frag', 'method': '<com.gaurav.avnc.ui.vnc.VncActivity: void access$showCredentialDialog(com.gaurav.avnc.ui.vnc.VncActivity)>'}
+[source] :  com.gaurav.avnc.ui.home.HomeActivity
+[child] :  {'name': 'com.gaurav.avnc.ui.home.HomeActivity'}
+[child] :  {'name': 'com.gaurav.avnc.ui.prefs.PrefsActivity', 'type': 'Act2Act', 'method': '<com.gaurav.avnc.ui.home.HomeActivity: boolean access$onMenuItemSelected(com.gaurav.avnc.ui.home.HomeActivity,int)>', 'extras': '', 'flags': ''}
+[child] :  {'name': 'com.gaurav.avnc.ui.home.UrlBarActivity', 'type': 'Act2Act', 'method': "<'-$$LambdaGroup$js$apKqN3YU6EYNrtbjhLh6K31AuQk': void onClick(android.view.View)>", 'extras': '', 'flags': ''}
+[child] :  {'name': 'com.gaurav.avnc.ui.home.ProfileEditorFragment', 'type': 'Act2Frag', 'method': '<com.gaurav.avnc.ui.home.HomeActivity: void access$showProfileEditor(com.gaurav.avnc.ui.home.HomeActivity)>'}
+[child] :  {'name': 'interICC_android.intent.action.VIEW, ', 'type': 'Act2Class', 'method': '<com.gaurav.avnc.ui.home.HomeActivity: boolean access$onMenuItemSelected(com.gaurav.avnc.ui.home.HomeActivity,int)>', 'action': 'android.intent.action.VIEW', 'data': '', 'extras': '', 'flags': ''}
+[child] :  {'name': 'com.gaurav.avnc.ui.about.AboutActivity', 'type': 'Act2Act', 'method': '<com.gaurav.avnc.ui.home.HomeActivity: boolean access$onMenuItemSelected(com.gaurav.avnc.ui.home.HomeActivity,int)>', 'extras': '', 'flags': ''}
+[source] :  com.gaurav.avnc.ui.home.SplashActivity
+[child] :  {'name': 'com.gaurav.avnc.ui.home.SplashActivity'}
+[child] :  {'name': 'com.gaurav.avnc.ui.home.HomeActivity', 'type': 'Act2Act', 'method': '<com.gaurav.avnc.ui.home.SplashActivity: void onCreate(android.os.Bundle)>', 'extras': '', 'flags': ''}
+iccbottrans :  /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/iccbot.txt
+[iccbot]
+com.gaurav.avnc.ui.home.HomeActivity->com.gaurav.avnc.ui.about.AboutActivity
+com.gaurav.avnc.ui.home.UrlBarActivity->com.gaurav.avnc.ui.vnc.VncActivity
+com.gaurav.avnc.ui.vnc.UriReceiverActivity->com.gaurav.avnc.ui.vnc.VncActivity
+com.gaurav.avnc.ui.home.HomeActivity->com.gaurav.avnc.ui.home.ProfileEditorFragment
+com.gaurav.avnc.ui.vnc.VncActivity->com.gaurav.avnc.ui.vnc.HostKeyFragment
+com.gaurav.avnc.ui.home.HomeActivity->com.gaurav.avnc.ui.home.UrlBarActivity
+com.gaurav.avnc.ui.home.HomeActivity->com.gaurav.avnc.ui.prefs.PrefsActivity
+com.gaurav.avnc.ui.vnc.VncActivity->com.gaurav.avnc.ui.vnc.CredentialFragment
+com.gaurav.avnc.ui.home.SplashActivity->com.gaurav.avnc.ui.home.HomeActivity
+{'com.gaurav.avnc.ui.home.UrlBarActivity': [{'name': 'com.gaurav.avnc.ui.vnc.VncActivity', 'type': 'Act2Act', 'method': '<androidx.transition.ViewGroupUtilsApi14: void startVncActivity(android.app.Activity,com.gaurav.avnc.model.ServerProfile)>', 'extras': '', 'flags': ''}], 'com.gaurav.avnc.ui.prefs.PrefsActivity': [], 'com.gaurav.avnc.ui.about.AboutActivity': [], 'com.gaurav.avnc.ui.vnc.UriReceiverActivity': [{'name': 'com.gaurav.avnc.ui.vnc.VncActivity', 'type': 'Act2Act', 'method': '<androidx.transition.ViewGroupUtilsApi14: void startVncActivity(android.app.Activity,com.gaurav.avnc.model.ServerProfile)>', 'extras': '', 'flags': ''}], 'com.gaurav.avnc.ui.vnc.VncActivity': [{'name': 'com.gaurav.avnc.ui.vnc.HostKeyFragment', 'type': 'Act2Frag', 'method': '<com.gaurav.avnc.ui.vnc.VncActivity: void access$showHostKeyDialog(com.gaurav.avnc.ui.vnc.VncActivity)>'}, {'name': 'com.gaurav.avnc.ui.vnc.CredentialFragment', 'type': 'Act2Frag', 'method': '<com.gaurav.avnc.ui.vnc.VncActivity: void access$showCredentialDialog(com.gaurav.avnc.ui.vnc.VncActivity)>'}], 'com.gaurav.avnc.ui.home.HomeActivity': [{'name': 'com.gaurav.avnc.ui.prefs.PrefsActivity', 'type': 'Act2Act', 'method': '<com.gaurav.avnc.ui.home.HomeActivity: boolean access$onMenuItemSelected(com.gaurav.avnc.ui.home.HomeActivity,int)>', 'extras': '', 'flags': ''}, {'name': 'com.gaurav.avnc.ui.home.UrlBarActivity', 'type': 'Act2Act', 'method': "<'-$$LambdaGroup$js$apKqN3YU6EYNrtbjhLh6K31AuQk': void onClick(android.view.View)>", 'extras': '', 'flags': ''}, {'name': 'com.gaurav.avnc.ui.home.ProfileEditorFragment', 'type': 'Act2Frag', 'method': '<com.gaurav.avnc.ui.home.HomeActivity: void access$showProfileEditor(com.gaurav.avnc.ui.home.HomeActivity)>'}, {'name': 'com.gaurav.avnc.ui.about.AboutActivity', 'type': 'Act2Act', 'method': '<com.gaurav.avnc.ui.home.HomeActivity: boolean access$onMenuItemSelected(com.gaurav.avnc.ui.home.HomeActivity,int)>', 'extras': '', 'flags': ''}], 'com.gaurav.avnc.ui.home.SplashActivity': [{'name': 'com.gaurav.avnc.ui.home.HomeActivity', 'type': 'Act2Act', 'method': '<com.gaurav.avnc.ui.home.SplashActivity: void onCreate(android.os.Bundle)>', 'extras': '', 'flags': ''}]}
+{'name': 'com.gaurav.avnc.ui.vnc.VncActivity', 'type': 'Act2Act', 'method': '<androidx.transition.ViewGroupUtilsApi14: void startVncActivity(android.app.Activity,com.gaurav.avnc.model.ServerProfile)>', 'extras': '', 'flags': ''}
+[-] jimple is not exists
+[-] rootIR is not exists
+{'name': 'com.gaurav.avnc.ui.vnc.VncActivity', 'type': 'Act2Act', 'method': '<androidx.transition.ViewGroupUtilsApi14: void startVncActivity(android.app.Activity,com.gaurav.avnc.model.ServerProfile)>', 'extras': '', 'flags': ''}
+[-] jimple is not exists
+[-] rootIR is not exists
+{'name': 'com.gaurav.avnc.ui.vnc.HostKeyFragment', 'type': 'Act2Frag', 'method': '<com.gaurav.avnc.ui.vnc.VncActivity: void access$showHostKeyDialog(com.gaurav.avnc.ui.vnc.VncActivity)>'}
+[+] jimple is exists:  /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/iccbot/com.gaurav.avnc_14/SootIRInfo/com.gaurav.avnc.ui.vnc.VncActivity.jimple
+[+] rootIR is exists:  /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/iccbot/com.gaurav.avnc_14/SootIRInfo/com.gaurav.avnc.ui.vnc.VncActivity.jimple
+[ROOT IR]:  /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/iccbot/com.gaurav.avnc_14/SootIRInfo/com.gaurav.avnc.ui.vnc.VncActivity.jimple
+{'name': 'com.gaurav.avnc.ui.vnc.CredentialFragment', 'type': 'Act2Frag', 'method': '<com.gaurav.avnc.ui.vnc.VncActivity: void access$showCredentialDialog(com.gaurav.avnc.ui.vnc.VncActivity)>'}
+[+] jimple is exists:  /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/iccbot/com.gaurav.avnc_14/SootIRInfo/com.gaurav.avnc.ui.vnc.VncActivity.jimple
+[+] rootIR is exists:  /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/iccbot/com.gaurav.avnc_14/SootIRInfo/com.gaurav.avnc.ui.vnc.VncActivity.jimple
+[ROOT IR]:  /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/iccbot/com.gaurav.avnc_14/SootIRInfo/com.gaurav.avnc.ui.vnc.VncActivity.jimple
+{'name': 'com.gaurav.avnc.ui.prefs.PrefsActivity', 'type': 'Act2Act', 'method': '<com.gaurav.avnc.ui.home.HomeActivity: boolean access$onMenuItemSelected(com.gaurav.avnc.ui.home.HomeActivity,int)>', 'extras': '', 'flags': ''}
+[+] jimple is exists:  /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/iccbot/com.gaurav.avnc_14/SootIRInfo/com.gaurav.avnc.ui.home.HomeActivity.jimple
+[+] rootIR is exists:  /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/iccbot/com.gaurav.avnc_14/SootIRInfo/com.gaurav.avnc.ui.home.HomeActivity.jimple
+[ROOT IR]:  /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/iccbot/com.gaurav.avnc_14/SootIRInfo/com.gaurav.avnc.ui.home.HomeActivity.jimple
+{'name': 'com.gaurav.avnc.ui.home.UrlBarActivity', 'type': 'Act2Act', 'method': "<'-$$LambdaGroup$js$apKqN3YU6EYNrtbjhLh6K31AuQk': void onClick(android.view.View)>", 'extras': '', 'flags': ''}
+[-] jimple is not exists
+[-] rootIR is not exists
+{'name': 'com.gaurav.avnc.ui.home.ProfileEditorFragment', 'type': 'Act2Frag', 'method': '<com.gaurav.avnc.ui.home.HomeActivity: void access$showProfileEditor(com.gaurav.avnc.ui.home.HomeActivity)>'}
+[+] jimple is exists:  /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/iccbot/com.gaurav.avnc_14/SootIRInfo/com.gaurav.avnc.ui.home.HomeActivity.jimple
+[+] rootIR is exists:  /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/iccbot/com.gaurav.avnc_14/SootIRInfo/com.gaurav.avnc.ui.home.HomeActivity.jimple
+[ROOT IR]:  /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/iccbot/com.gaurav.avnc_14/SootIRInfo/com.gaurav.avnc.ui.home.HomeActivity.jimple
+{'name': 'com.gaurav.avnc.ui.about.AboutActivity', 'type': 'Act2Act', 'method': '<com.gaurav.avnc.ui.home.HomeActivity: boolean access$onMenuItemSelected(com.gaurav.avnc.ui.home.HomeActivity,int)>', 'extras': '', 'flags': ''}
+[+] jimple is exists:  /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/iccbot/com.gaurav.avnc_14/SootIRInfo/com.gaurav.avnc.ui.home.HomeActivity.jimple
+[+] rootIR is exists:  /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/iccbot/com.gaurav.avnc_14/SootIRInfo/com.gaurav.avnc.ui.home.HomeActivity.jimple
+[ROOT IR]:  /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/iccbot/com.gaurav.avnc_14/SootIRInfo/com.gaurav.avnc.ui.home.HomeActivity.jimple
+{'name': 'com.gaurav.avnc.ui.home.HomeActivity', 'type': 'Act2Act', 'method': '<com.gaurav.avnc.ui.home.SplashActivity: void onCreate(android.os.Bundle)>', 'extras': '', 'flags': ''}
+[+] jimple is exists:  /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/iccbot/com.gaurav.avnc_14/SootIRInfo/com.gaurav.avnc.ui.home.SplashActivity.jimple
+[+] rootIR is exists:  /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/iccbot/com.gaurav.avnc_14/SootIRInfo/com.gaurav.avnc.ui.home.SplashActivity.jimple
+[ROOT IR]:  /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/iccbot/com.gaurav.avnc_14/SootIRInfo/com.gaurav.avnc.ui.home.SplashActivity.jimple
+[source] :  com.gaurav.avnc.ui.home.UrlBarActivity
+[destination activity/fragment] :  com.gaurav.avnc.ui.vnc.VncActivity
+[dtype] :  Act2Act
+[method] :  <androidx.transition.ViewGroupUtilsApi14: void startVncActivity(android.app.Activity,com.gaurav.avnc.model.ServerProfile)>
+[sootir] :  androidx.transition.ViewGroupUtilsApi14
+[fun] :  void startVncActivity(android.app.Activity,com.gaurav.avnc.model.ServerProfile)
+[source] :  com.gaurav.avnc.ui.vnc.UriReceiverActivity
+[destination activity/fragment] :  com.gaurav.avnc.ui.vnc.VncActivity
+[dtype] :  Act2Act
+[method] :  <androidx.transition.ViewGroupUtilsApi14: void startVncActivity(android.app.Activity,com.gaurav.avnc.model.ServerProfile)>
+[sootir] :  androidx.transition.ViewGroupUtilsApi14
+[fun] :  void startVncActivity(android.app.Activity,com.gaurav.avnc.model.ServerProfile)
+[source] :  com.gaurav.avnc.ui.vnc.VncActivity
+[destination activity/fragment] :  com.gaurav.avnc.ui.vnc.HostKeyFragment
+[dtype] :  Act2Frag
+[method] :  <com.gaurav.avnc.ui.vnc.VncActivity: void access$showHostKeyDialog(com.gaurav.avnc.ui.vnc.VncActivity)>
+[sootir] :  com.gaurav.avnc.ui.vnc.VncActivity
+[fun] :  void access$showHostKeyDialog(com.gaurav.avnc.ui.vnc.VncActivity)
+[source] :  com.gaurav.avnc.ui.vnc.VncActivity
+[destination activity/fragment] :  com.gaurav.avnc.ui.vnc.CredentialFragment
+[dtype] :  Act2Frag
+[method] :  <com.gaurav.avnc.ui.vnc.VncActivity: void access$showCredentialDialog(com.gaurav.avnc.ui.vnc.VncActivity)>
+[sootir] :  com.gaurav.avnc.ui.vnc.VncActivity
+[fun] :  void access$showCredentialDialog(com.gaurav.avnc.ui.vnc.VncActivity)
+[source] :  com.gaurav.avnc.ui.home.HomeActivity
+[destination activity/fragment] :  com.gaurav.avnc.ui.prefs.PrefsActivity
+[dtype] :  Act2Act
+[method] :  <com.gaurav.avnc.ui.home.HomeActivity: boolean access$onMenuItemSelected(com.gaurav.avnc.ui.home.HomeActivity,int)>
+[sootir] :  com.gaurav.avnc.ui.home.HomeActivity
+[fun] :  boolean access$onMenuItemSelected(com.gaurav.avnc.ui.home.HomeActivity,int)
+[source] :  com.gaurav.avnc.ui.home.HomeActivity
+[destination activity/fragment] :  com.gaurav.avnc.ui.home.UrlBarActivity
+[dtype] :  Act2Act
+[method] :  <'-$$LambdaGroup$js$apKqN3YU6EYNrtbjhLh6K31AuQk': void onClick(android.view.View)>
+[sootir] :  '-$$LambdaGroup$js$apKqN3YU6EYNrtbjhLh6K31AuQk'
+[fun] :  void onClick(android.view.View)
+[source] :  com.gaurav.avnc.ui.home.HomeActivity
+[destination activity/fragment] :  com.gaurav.avnc.ui.home.ProfileEditorFragment
+[dtype] :  Act2Frag
+[method] :  <com.gaurav.avnc.ui.home.HomeActivity: void access$showProfileEditor(com.gaurav.avnc.ui.home.HomeActivity)>
+[sootir] :  com.gaurav.avnc.ui.home.HomeActivity
+[fun] :  void access$showProfileEditor(com.gaurav.avnc.ui.home.HomeActivity)
+[source] :  com.gaurav.avnc.ui.home.HomeActivity
+[destination activity/fragment] :  com.gaurav.avnc.ui.about.AboutActivity
+[dtype] :  Act2Act
+[method] :  <com.gaurav.avnc.ui.home.HomeActivity: boolean access$onMenuItemSelected(com.gaurav.avnc.ui.home.HomeActivity,int)>
+[sootir] :  com.gaurav.avnc.ui.home.HomeActivity
+[fun] :  boolean access$onMenuItemSelected(com.gaurav.avnc.ui.home.HomeActivity,int)
+[source] :  com.gaurav.avnc.ui.home.SplashActivity
+[destination activity/fragment] :  com.gaurav.avnc.ui.home.HomeActivity
+[dtype] :  Act2Act
+[method] :  <com.gaurav.avnc.ui.home.SplashActivity: void onCreate(android.os.Bundle)>
+[sootir] :  com.gaurav.avnc.ui.home.SplashActivity
+[fun] :  void onCreate(android.os.Bundle)
+{'com.gaurav.avnc.ui.home.UrlBarActivity': [<parseCTG.paseCTG.Destination object at 0x7f4ff9d0ce80>], 'com.gaurav.avnc.ui.prefs.PrefsActivity': [], 'com.gaurav.avnc.ui.about.AboutActivity': [], 'com.gaurav.avnc.ui.vnc.UriReceiverActivity': [<parseCTG.paseCTG.Destination object at 0x7f4ff9d0cd00>], 'com.gaurav.avnc.ui.vnc.VncActivity': [<parseCTG.paseCTG.Destination object at 0x7f4ff9d0cf40>, <parseCTG.paseCTG.Destination object at 0x7f4ff9d0ccd0>], 'com.gaurav.avnc.ui.home.HomeActivity': [<parseCTG.paseCTG.Destination object at 0x7f4ff9d0cc10>, <parseCTG.paseCTG.Destination object at 0x7f4ff9d0cc70>, <parseCTG.paseCTG.Destination object at 0x7f4ff9d0cee0>, <parseCTG.paseCTG.Destination object at 0x7f4ff9d0caf0>], 'com.gaurav.avnc.ui.home.SplashActivity': [<parseCTG.paseCTG.Destination object at 0x7f4ff9d0c7c0>]}
+========== Parsing manifest file of 'com.gaurav.avnc-14.apk' ==========
+[+] find the decompiled app: com.gaurav.avnc-14
+[+] manifestPath:  /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/iccbot/com.gaurav.avnc_14/CTGResult/componentInfo.xml
+root {}
+component {'name': 'com.gaurav.avnc.ui.home.UrlBarActivity', 'type': 'Activity', 'exported': 'true'}
+component {'name': 'com.gaurav.avnc.ui.home.UrlBarActivity', 'type': 'Activity', 'exported': 'true'}
+manifest {}
+intent_filter {'action': 'zxy', 'category': 'zxy'}
+sender {'destination': 'com.gaurav.avnc.ui.vnc.VncActivity'}
+component {'name': 'com.gaurav.avnc.ui.prefs.PrefsActivity', 'type': 'Activity', 'exported': 'true'}
+component {'name': 'com.gaurav.avnc.ui.prefs.PrefsActivity', 'type': 'Activity', 'exported': 'true'}
+manifest {}
+intent_filter {'action': 'zxy', 'category': 'zxy'}
+component {'name': 'com.gaurav.avnc.ui.about.AboutActivity', 'type': 'Activity', 'exported': 'true'}
+component {'name': 'com.gaurav.avnc.ui.about.AboutActivity', 'type': 'Activity', 'exported': 'true'}
+manifest {}
+intent_filter {'action': 'zxy', 'category': 'zxy'}
+component {'name': 'com.gaurav.avnc.ui.vnc.UriReceiverActivity', 'type': 'Activity', 'exported': 'true'}
+component {'name': 'com.gaurav.avnc.ui.vnc.UriReceiverActivity', 'type': 'Activity', 'exported': 'true'}
+manifest {}
+intent_filter {'action': 'zxy', 'category': 'zxy'}
+intent_filter {'action': 'android.intent.action.VIEW', 'category': 'android.intent.category.BROWSABLE, android.intent.category.DEFAULT', 'scheme': 'vnc'}
+intent_filter {'action': 'zxy', 'category': 'zxy'}
+sender {'destination': 'com.gaurav.avnc.ui.vnc.VncActivity'}
+component {'name': 'com.gaurav.avnc.ui.vnc.VncActivity', 'type': 'Activity', 'exported': 'true'}
+component {'name': 'com.gaurav.avnc.ui.vnc.VncActivity', 'type': 'Activity', 'exported': 'true'}
+manifest {}
+intent_filter {'action': 'zxy', 'category': 'zxy'}
+sender {'destination': 'com.gaurav.avnc.ui.vnc.CredentialFragment, com.gaurav.avnc.ui.vnc.HostKeyFragment'}
+component {'name': 'com.gaurav.avnc.ui.home.HomeActivity', 'type': 'Activity', 'exported': 'true'}
+component {'name': 'com.gaurav.avnc.ui.home.HomeActivity', 'type': 'Activity', 'exported': 'true'}
+manifest {}
+intent_filter {'action': 'zxy', 'category': 'zxy'}
+sender {'destination': 'com.gaurav.avnc.ui.home.ProfileEditorFragment, com.gaurav.avnc.ui.home.UrlBarActivity, com.gaurav.avnc.ui.about.AboutActivity, com.gaurav.avnc.ui.prefs.PrefsActivity, interICC_android.intent.action.VIEW, ', 'action': 'android.intent.action.VIEW', 'data': ''}
+component {'name': 'com.gaurav.avnc.ui.home.SplashActivity', 'type': 'Activity', 'exported': 'true'}
+component {'name': 'com.gaurav.avnc.ui.home.SplashActivity', 'type': 'Activity', 'exported': 'true'}
+manifest {}
+intent_filter {'action': 'zxy', 'category': 'zxy'}
+intent_filter {'action': 'android.intent.action.MAIN', 'category': 'android.intent.category.LAUNCHER'}
+intent_filter {'action': 'zxy', 'category': 'zxy'}
+sender {'destination': 'com.gaurav.avnc.ui.home.HomeActivity'}
+{'com.gaurav.avnc.ui.home.UrlBarActivity': [['zxy', 'zxy']], 'com.gaurav.avnc.ui.prefs.PrefsActivity': [['zxy', 'zxy']], 'com.gaurav.avnc.ui.about.AboutActivity': [['zxy', 'zxy']], 'com.gaurav.avnc.ui.vnc.UriReceiverActivity': [['zxy', 'zxy'], ['android.intent.action.VIEW', 'android.intent.category.BROWSABLE, android.intent.category.DEFAULT'], ['zxy', 'zxy']], 'com.gaurav.avnc.ui.vnc.VncActivity': [['zxy', 'zxy']], 'com.gaurav.avnc.ui.home.HomeActivity': [['zxy', 'zxy']], 'com.gaurav.avnc.ui.home.SplashActivity': [['zxy', 'zxy'], ['android.intent.action.MAIN', 'android.intent.category.LAUNCHER'], ['zxy', 'zxy']]}
+
+[+] get parseManifest!
+###################################
+[~]p_id:  com.gaurav.avnc-14
+[~]res_dir:  /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14
+[~]version:  14
+[~]apk_name:  com.gaurav.avnc_14.apk
+[~]used_name:  com.gaurav.avnc
+[~]apk_path:  /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/unpack/dist/com.gaurav.avnc_14.apk
+[~]unpack_path:  /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/unpack
+[~]icc result:  /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/iccbot/com.gaurav.avnc_14
+[~]activity:  ['com.gaurav.avnc.ui.home.UrlBarActivity', 'com.gaurav.avnc.ui.prefs.PrefsActivity', 'com.gaurav.avnc.ui.about.AboutActivity', 'com.gaurav.avnc.ui.vnc.UriReceiverActivity', 'com.gaurav.avnc.ui.vnc.VncActivity', 'com.gaurav.avnc.ui.home.HomeActivity', 'com.gaurav.avnc.ui.home.SplashActivity']
+[~]screenlist:  set()
+###################################
+[+] Write to parseManifest.txt:  /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/parseManifest.txt
+b'List of devices attached\n86219b420804\tdevice\n\n'
+[+] Local:  86219b420804
+[+] connected to:  86219b420804
+[+] Local:  
+[+] Successfully init atx-agent!
+[<structure.phone.usephone object at 0x7f4ff9d0cfd0>]
+[+] get Phone list:  [<structure.phone.usephone object at 0x7f4ff9d0cfd0>]
+[+] Success install apk:  /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/unpack/dist/com.gaurav.avnc_14.apk
+[pairs] {'com.gaurav.avnc.ui.home.UrlBarActivity': [['zxy', 'zxy']], 'com.gaurav.avnc.ui.prefs.PrefsActivity': [['zxy', 'zxy']], 'com.gaurav.avnc.ui.about.AboutActivity': [['zxy', 'zxy']], 'com.gaurav.avnc.ui.vnc.UriReceiverActivity': [['zxy', 'zxy'], ['android.intent.action.VIEW', 'android.intent.category.BROWSABLE, android.intent.category.DEFAULT'], ['zxy', 'zxy']], 'com.gaurav.avnc.ui.vnc.VncActivity': [['zxy', 'zxy']], 'com.gaurav.avnc.ui.home.HomeActivity': [['zxy', 'zxy']], 'com.gaurav.avnc.ui.home.SplashActivity': [['zxy', 'zxy'], ['android.intent.action.MAIN', 'android.intent.category.LAUNCHER'], ['zxy', 'zxy']]}
+[OTHER]: 
+[['zxy', 'zxy']]
+============  NEW START ACTIVITY ============
+[START ACTIVITY]:  com.gaurav.avnc.ui.home.UrlBarActivity
+[component]:  com.gaurav.avnc/com.gaurav.avnc.ui.home.UrlBarActivity
+[action]:  zxy
+[category]:  zxy
+[+] Find component json
+[-] DON'T GET EXTRAS
+[cmd]:  timeout 20s adb -s 86219b420804 shell am start -S -n com.gaurav.avnc/com.gaurav.avnc.ui.home.UrlBarActivity -a zxy -c zxy -W
+[cmd]:  timeout 20s adb -s 86219b420804 shell am start -S -n com.gaurav.avnc/com.gaurav.avnc.ui.home.UrlBarActivity -a zxy -c zxy -W
+[short_act]:  .ui.home.UrlBarActivity
+[+] short act in Run result!
+[+] successful append new coverage activity:  com.gaurav.avnc.ui.home.UrlBarActivity
+[+] Now act coverage : set()
+[act]:  .ui.home.UrlBarActivity
+[+] New Acr Start Screen
+[+] PC get shoot:  7e51fa9870cab6f10e80f385e9e42478.png
+[+] Get shot:  /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/screenshot/7e51fa9870cab6f10e80f385e9e42478.png
+Activity Screen
+[get current frag]
+[CMD] :  adb -s 86219b420804 shell dumpsys activity top
+============ screen object ============
+[vector] :  7e51fa9870cab6f10e80f385e9e42478
+[parentScreen] :  
+[Activity] :  com.gaurav.avnc.ui.home.UrlBarActivity
+[adb] :  timeout 20s adb -s 86219b420804 shell am start -S -n com.gaurav.avnc/com.gaurav.avnc.ui.home.UrlBarActivity -a zxy -c zxy -W
+[fragment] :  
+[next-ragment] :  
+[newfrag] :  False
+[rescommand] : 
+=======================================
+[+] run :  7e51fa9870cab6f10e80f385e9e42478
+[+] Screen ACT:  com.gaurav.avnc.ui.home.UrlBarActivity
+Find Target Widget
+[PARSE TARGET]
+[ACTIVITY] :  com.gaurav.avnc.ui.home.UrlBarActivity
+[source] :  com.gaurav.avnc.ui.home.UrlBarActivity
+[destination activity/fragment] :  com.gaurav.avnc.ui.vnc.VncActivity
+[dtype] :  Act2Act
+[method] :  <androidx.transition.ViewGroupUtilsApi14: void startVncActivity(android.app.Activity,com.gaurav.avnc.model.ServerProfile)>
+[sootir] :  androidx.transition.ViewGroupUtilsApi14
+[fun] :  void startVncActivity(android.app.Activity,com.gaurav.avnc.model.ServerProfile)
+[Target Widget] :  []
+Build init Widget
+======== wdiget stack ========
+{'bounds': {'bottom': 276, 'left': 30, 'right': 174, 'top': 132}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '返回', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 276, 'left': 30, 'right': 174, 'top': 132}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 276, 'left': 174, 'right': 906, 'top': 132}, 'childCount': 0, 'className': 'android.widget.EditText', 'contentDescription': '服务器地址', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 276, 'left': 174, 'right': 906, 'top': 132}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': True, 'longClickable': True, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 276, 'left': 906, 'right': 1050, 'top': 132}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '清除', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 276, 'left': 906, 'right': 1050, 'top': 132}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+==============================
+[++++++++++++++++++]
+restartScreen
+[+] start Act !
+{'bounds': {'bottom': 276, 'left': 906, 'right': 1050, 'top': 132}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '清除', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 276, 'left': 906, 'right': 1050, 'top': 132}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+[+] widget click
+[+] jmup to another pkg:  com.miui.home
+[++++++++++++++++++]
+restartScreen
+[+] start Act !
+{'bounds': {'bottom': 276, 'left': 174, 'right': 906, 'top': 132}, 'childCount': 0, 'className': 'android.widget.EditText', 'contentDescription': '服务器地址', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 276, 'left': 174, 'right': 906, 'top': 132}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': True, 'longClickable': True, 'scrollable': False, 'selected': False}
+[+] widget click
+Alive Package
+[CURRENT ACT]:  .ui.home.UrlBarActivity
+[get current frag]
+[CMD] :  adb -s 86219b420804 shell dumpsys activity top
+[Current Fragment] :  
+[-] Screen is old:  7e51fa9870cab6f10e80f385e9e42478
+[++++++++++++++++++]
+restartScreen
+[+] start Act !
+{'bounds': {'bottom': 276, 'left': 30, 'right': 174, 'top': 132}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '返回', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 276, 'left': 30, 'right': 174, 'top': 132}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+[+] widget click
+Alive Package
+============  NEW START ACTIVITY ============
+[START ACTIVITY]:  com.gaurav.avnc.ui.home.UrlBarActivity
+[component]:  com.gaurav.avnc/com.gaurav.avnc.ui.home.UrlBarActivity
+[+] Find component json
+[-] DON'T GET EXTRAS
+[cmd]:  timeout 20s adb -s 86219b420804 shell am start -S -n com.gaurav.avnc/com.gaurav.avnc.ui.home.UrlBarActivity -W
+[cmd]:  timeout 20s adb -s 86219b420804 shell am start -S -n com.gaurav.avnc/com.gaurav.avnc.ui.home.UrlBarActivity -W
+[short_act]:  .ui.home.UrlBarActivity
+[+] short act in Run result!
+[act]:  .ui.home.UrlBarActivity
+[OTHER]: 
+[['zxy', 'zxy']]
+============  NEW START ACTIVITY ============
+[START ACTIVITY]:  com.gaurav.avnc.ui.prefs.PrefsActivity
+[component]:  com.gaurav.avnc/com.gaurav.avnc.ui.prefs.PrefsActivity
+[action]:  zxy
+[category]:  zxy
+[+] Find component json
+[-] DON'T GET EXTRAS
+[cmd]:  timeout 20s adb -s 86219b420804 shell am start -S -n com.gaurav.avnc/com.gaurav.avnc.ui.prefs.PrefsActivity -a zxy -c zxy -W
+[cmd]:  timeout 20s adb -s 86219b420804 shell am start -S -n com.gaurav.avnc/com.gaurav.avnc.ui.prefs.PrefsActivity -a zxy -c zxy -W
+[short_act]:  .ui.prefs.PrefsActivity
+[+] short act in Run result!
+[+] successful append new coverage activity:  com.gaurav.avnc.ui.prefs.PrefsActivity
+[+] Now act coverage : {'com.gaurav.avnc.ui.home.UrlBarActivity'}
+[act]:  .ui.prefs.PrefsActivity
+[+] New Acr Start Screen
+[+] PC get shoot:  9d16993990b3e447cc623fdc3daad50a.png
+[+] Get shot:  /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/screenshot/9d16993990b3e447cc623fdc3daad50a.png
+Activity Screen
+[get current frag]
+[CMD] :  adb -s 86219b420804 shell dumpsys activity top
+Main
+0x7f0900c2)
+[NEW Trans] :  com.gaurav.avnc.ui.prefs.PrefsActivity->com.gaurav.avnc.Main
+[REAL NEW Trans] :  com.gaurav.avnc.ui.prefs.PrefsActivity->com.gaurav.avnc.Main
+============ screen object ============
+[vector] :  9d16993990b3e447cc623fdc3daad50a
+[parentScreen] :  
+[Activity] :  com.gaurav.avnc.ui.prefs.PrefsActivity
+[adb] :  timeout 20s adb -s 86219b420804 shell am start -S -n com.gaurav.avnc/com.gaurav.avnc.ui.prefs.PrefsActivity -a zxy -c zxy -W
+[fragment] :  com.gaurav.avnc.Main
+[next-ragment] :  
+[newfrag] :  True
+[rescommand] : 
+=======================================
+[+] run :  9d16993990b3e447cc623fdc3daad50a
+[+] Screen ACT:  com.gaurav.avnc.ui.prefs.PrefsActivity
+Find Target Widget
+[PARSE TARGET]
+[ACTIVITY] :  com.gaurav.avnc.ui.prefs.PrefsActivity
+[Target Widget] :  []
+Build init Widget
+======== wdiget stack ========
+{'bounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '转到上一层级', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 458, 'left': 0, 'right': 1080, 'top': 240}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 458, 'left': 0, 'right': 1080, 'top': 240}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 676, 'left': 0, 'right': 1080, 'top': 458}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 676, 'left': 0, 'right': 1080, 'top': 458}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 894, 'left': 0, 'right': 1080, 'top': 676}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 894, 'left': 0, 'right': 1080, 'top': 676}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 1112, 'left': 0, 'right': 1080, 'top': 894}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1112, 'left': 0, 'right': 1080, 'top': 894}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 1330, 'left': 0, 'right': 1080, 'top': 1112}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1330, 'left': 0, 'right': 1080, 'top': 1112}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+==============================
+[++++++++++++++++++]
+restartScreen
+[+] start Act !
+{'bounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+[+] widget click
+Alive Package
+[CURRENT ACT]:  .ui.prefs.PrefsActivity
+[get current frag]
+[CMD] :  adb -s 86219b420804 shell dumpsys activity top
+Experimental
+0x7f0900c2)
+[Current Fragment] :  com.gaurav.avnc.Experimental
+[+] find a new screen:  f64fd1f50d8e3c1f485fee41286ae7fd
+[+] PC get shoot:  f64fd1f50d8e3c1f485fee41286ae7fd.png
+[+] get shot:  /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/screenshot/f64fd1f50d8e3c1f485fee41286ae7fd.png
+Activity Screen
+screen.rescommand []
+rescommand [<uiautomator2._selector.UiObject object at 0x7f4ff9ce8c40>]
+[+] Build New Screen Successful!
+============ screen object ============
+[vector] :  f64fd1f50d8e3c1f485fee41286ae7fd
+[parentScreen] :  
+[Activity] :  com.gaurav.avnc.ui.prefs.PrefsActivity
+[adb] :  timeout 20s adb -s 86219b420804 shell am start -S -n com.gaurav.avnc/com.gaurav.avnc.ui.prefs.PrefsActivity -a zxy -c zxy -W
+[fragment] :  
+[next-ragment] :  
+[newfrag] :  False
+[rescommand] : 
+=======================================
+[+] run :  f64fd1f50d8e3c1f485fee41286ae7fd
+[+] Screen ACT:  com.gaurav.avnc.ui.prefs.PrefsActivity
+Find Target Widget
+[PARSE TARGET]
+[ACTIVITY] :  com.gaurav.avnc.ui.prefs.PrefsActivity
+[Target Widget] :  []
+Build init Widget
+======== wdiget stack ========
+{'bounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '转到上一层级', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 507, 'left': 0, 'right': 1080, 'top': 240}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 507, 'left': 0, 'right': 1080, 'top': 240}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 725, 'left': 0, 'right': 1080, 'top': 507}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 725, 'left': 0, 'right': 1080, 'top': 507}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+==============================
+[++++++++++++++++++]
+restartScreen
+[+] start Act !
+{'bounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+[+] start widget_command !
+{'bounds': {'bottom': 725, 'left': 0, 'right': 1080, 'top': 507}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 725, 'left': 0, 'right': 1080, 'top': 507}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+[+] widget click
+Alive Package
+[CURRENT ACT]:  .ui.prefs.PrefsActivity
+[get current frag]
+[CMD] :  adb -s 86219b420804 shell dumpsys activity top
+Experimental
+0x7f0900c2)
+[Current Fragment] :  com.gaurav.avnc.Experimental
+[-] Screen is old:  f64fd1f50d8e3c1f485fee41286ae7fd
+[++++++++++++++++++]
+restartScreen
+[+] start Act !
+{'bounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+[+] start widget_command !
+{'bounds': {'bottom': 507, 'left': 0, 'right': 1080, 'top': 240}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 507, 'left': 0, 'right': 1080, 'top': 240}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+[+] widget click
+Alive Package
+[CURRENT ACT]:  .ui.prefs.PrefsActivity
+[get current frag]
+[CMD] :  adb -s 86219b420804 shell dumpsys activity top
+Experimental
+0x7f0900c2)
+[Current Fragment] :  com.gaurav.avnc.Experimental
+[-] Screen is old:  f64fd1f50d8e3c1f485fee41286ae7fd
+[++++++++++++++++++]
+restartScreen
+[+] start Act !
+{'bounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+[+] start widget_command !
+{'bounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '转到上一层级', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+[+] widget click
+Alive Package
+[CURRENT ACT]:  .ui.prefs.PrefsActivity
+[get current frag]
+[CMD] :  adb -s 86219b420804 shell dumpsys activity top
+Main
+0x7f0900c2)
+[Current Fragment] :  com.gaurav.avnc.Main
+[+] find a new screen:  9d16993990b3e447cc623fdc3daad50a
+[+] PC get shoot:  9d16993990b3e447cc623fdc3daad50a.png
+[+] get shot:  /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/screenshot/9d16993990b3e447cc623fdc3daad50a.png
+Activity Screen
+screen.rescommand [<uiautomator2._selector.UiObject object at 0x7f4ff9ce8c40>]
+rescommand [<uiautomator2._selector.UiObject object at 0x7f4ff9ce8c40>, <uiautomator2._selector.UiObject object at 0x7f4ff66bd790>]
+[+] Build New Screen Successful!
+============ screen object ============
+[vector] :  9d16993990b3e447cc623fdc3daad50a
+[parentScreen] :  
+[Activity] :  com.gaurav.avnc.ui.prefs.PrefsActivity
+[adb] :  timeout 20s adb -s 86219b420804 shell am start -S -n com.gaurav.avnc/com.gaurav.avnc.ui.prefs.PrefsActivity -a zxy -c zxy -W
+[fragment] :  
+[next-ragment] :  
+[newfrag] :  False
+[rescommand] : 
+{'bounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '转到上一层级', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+=======================================
+[+] run :  9d16993990b3e447cc623fdc3daad50a
+[+] Screen ACT:  com.gaurav.avnc.ui.prefs.PrefsActivity
+Find Target Widget
+[PARSE TARGET]
+[ACTIVITY] :  com.gaurav.avnc.ui.prefs.PrefsActivity
+[Target Widget] :  []
+Build init Widget
+======== wdiget stack ========
+{'bounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '转到上一层级', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 458, 'left': 0, 'right': 1080, 'top': 240}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 458, 'left': 0, 'right': 1080, 'top': 240}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 676, 'left': 0, 'right': 1080, 'top': 458}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 676, 'left': 0, 'right': 1080, 'top': 458}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 894, 'left': 0, 'right': 1080, 'top': 676}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 894, 'left': 0, 'right': 1080, 'top': 676}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 1112, 'left': 0, 'right': 1080, 'top': 894}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1112, 'left': 0, 'right': 1080, 'top': 894}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 1330, 'left': 0, 'right': 1080, 'top': 1112}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1330, 'left': 0, 'right': 1080, 'top': 1112}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+==============================
+[++++++++++++++++++]
+restartScreen
+[+] start Act !
+{'bounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '转到上一层级', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+[+] start widget_command !
+{'bounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+[+] widget click
+Alive Package
+[CURRENT ACT]:  .ui.prefs.PrefsActivity
+[get current frag]
+[CMD] :  adb -s 86219b420804 shell dumpsys activity top
+Experimental
+0x7f0900c2)
+[Current Fragment] :  com.gaurav.avnc.Experimental
+[+] find a new screen:  f64fd1f50d8e3c1f485fee41286ae7fd
+[+] PC get shoot:  f64fd1f50d8e3c1f485fee41286ae7fd.png
+[+] get shot:  /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/screenshot/f64fd1f50d8e3c1f485fee41286ae7fd.png
+Activity Screen
+screen.rescommand [<uiautomator2._selector.UiObject object at 0x7f4ff9ce8c40>, <uiautomator2._selector.UiObject object at 0x7f4ff66bd790>]
+rescommand [<uiautomator2._selector.UiObject object at 0x7f4ff9ce8c40>, <uiautomator2._selector.UiObject object at 0x7f4ff66bd790>, <uiautomator2._selector.UiObject object at 0x7f4ff9cd5910>]
+[+] Build New Screen Successful!
+============ screen object ============
+[vector] :  f64fd1f50d8e3c1f485fee41286ae7fd
+[parentScreen] :  
+[Activity] :  com.gaurav.avnc.ui.prefs.PrefsActivity
+[adb] :  timeout 20s adb -s 86219b420804 shell am start -S -n com.gaurav.avnc/com.gaurav.avnc.ui.prefs.PrefsActivity -a zxy -c zxy -W
+[fragment] :  
+[next-ragment] :  
+[newfrag] :  False
+[rescommand] : 
+=======================================
+[+] run :  f64fd1f50d8e3c1f485fee41286ae7fd
+[+] Screen ACT:  com.gaurav.avnc.ui.prefs.PrefsActivity
+Find Target Widget
+[PARSE TARGET]
+[ACTIVITY] :  com.gaurav.avnc.ui.prefs.PrefsActivity
+[Target Widget] :  []
+Build init Widget
+======== wdiget stack ========
+{'bounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '转到上一层级', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 507, 'left': 0, 'right': 1080, 'top': 240}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 507, 'left': 0, 'right': 1080, 'top': 240}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 725, 'left': 0, 'right': 1080, 'top': 507}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 725, 'left': 0, 'right': 1080, 'top': 507}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+==============================
+[++++++++++++++++++]
+restartScreen
+[+] start Act !
+{'bounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '转到上一层级', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+[+] start widget_command !
+{'bounds': {'bottom': 725, 'left': 0, 'right': 1080, 'top': 507}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 725, 'left': 0, 'right': 1080, 'top': 507}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+[+] widget click
+Alive Package
+[CURRENT ACT]:  .ui.prefs.PrefsActivity
+[get current frag]
+[CMD] :  adb -s 86219b420804 shell dumpsys activity top
+Experimental
+0x7f0900c2)
+[Current Fragment] :  com.gaurav.avnc.Experimental
+[-] Screen is old:  f64fd1f50d8e3c1f485fee41286ae7fd
+[++++++++++++++++++]
+restartScreen
+[+] start Act !
+{'bounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '转到上一层级', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+[+] start widget_command !
+{'bounds': {'bottom': 507, 'left': 0, 'right': 1080, 'top': 240}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 507, 'left': 0, 'right': 1080, 'top': 240}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+[+] widget click
+Alive Package
+[CURRENT ACT]:  .ui.prefs.PrefsActivity
+[get current frag]
+[CMD] :  adb -s 86219b420804 shell dumpsys activity top
+Experimental
+0x7f0900c2)
+[Current Fragment] :  com.gaurav.avnc.Experimental
+[-] Screen is old:  f64fd1f50d8e3c1f485fee41286ae7fd
+[++++++++++++++++++]
+restartScreen
+[+] start Act !
+{'bounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '转到上一层级', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+[+] start widget_command !
+{'bounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '转到上一层级', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+[+] widget click
+Alive Package
+[CURRENT ACT]:  .ui.prefs.PrefsActivity
+[get current frag]
+[CMD] :  adb -s 86219b420804 shell dumpsys activity top
+Main
+0x7f0900c2)
+[Current Fragment] :  com.gaurav.avnc.Main
+[+] find a new screen:  9d16993990b3e447cc623fdc3daad50a
+[+] PC get shoot:  9d16993990b3e447cc623fdc3daad50a.png
+[+] get shot:  /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/screenshot/9d16993990b3e447cc623fdc3daad50a.png
+Activity Screen
+screen.rescommand [<uiautomator2._selector.UiObject object at 0x7f4ff9ce8c40>, <uiautomator2._selector.UiObject object at 0x7f4ff66bd790>, <uiautomator2._selector.UiObject object at 0x7f4ff9cd5910>]
+rescommand [<uiautomator2._selector.UiObject object at 0x7f4ff9ce8c40>, <uiautomator2._selector.UiObject object at 0x7f4ff66bd790>, <uiautomator2._selector.UiObject object at 0x7f4ff9cd5910>, <uiautomator2._selector.UiObject object at 0x7f4ff66bdb20>]
+[+] Build New Screen Successful!
+============ screen object ============
+[vector] :  9d16993990b3e447cc623fdc3daad50a
+[parentScreen] :  
+[Activity] :  com.gaurav.avnc.ui.prefs.PrefsActivity
+[adb] :  timeout 20s adb -s 86219b420804 shell am start -S -n com.gaurav.avnc/com.gaurav.avnc.ui.prefs.PrefsActivity -a zxy -c zxy -W
+[fragment] :  
+[next-ragment] :  
+[newfrag] :  False
+[rescommand] : 
+{'bounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '转到上一层级', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '转到上一层级', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+=======================================
+[+] run :  9d16993990b3e447cc623fdc3daad50a
+[+] Screen ACT:  com.gaurav.avnc.ui.prefs.PrefsActivity
+Find Target Widget
+[PARSE TARGET]
+[ACTIVITY] :  com.gaurav.avnc.ui.prefs.PrefsActivity
+[Target Widget] :  []
+Build init Widget
+======== wdiget stack ========
+{'bounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '转到上一层级', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 458, 'left': 0, 'right': 1080, 'top': 240}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 458, 'left': 0, 'right': 1080, 'top': 240}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 676, 'left': 0, 'right': 1080, 'top': 458}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 676, 'left': 0, 'right': 1080, 'top': 458}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 894, 'left': 0, 'right': 1080, 'top': 676}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 894, 'left': 0, 'right': 1080, 'top': 676}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 1112, 'left': 0, 'right': 1080, 'top': 894}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1112, 'left': 0, 'right': 1080, 'top': 894}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 1330, 'left': 0, 'right': 1080, 'top': 1112}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1330, 'left': 0, 'right': 1080, 'top': 1112}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+==============================
+[++++++++++++++++++]
+restartScreen
+[+] start Act !
+{'bounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '转到上一层级', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '转到上一层级', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+[+] start widget_command !
+{'bounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+[+] widget click
+Alive Package
+[CURRENT ACT]:  .ui.prefs.PrefsActivity
+[get current frag]
+[CMD] :  adb -s 86219b420804 shell dumpsys activity top
+Experimental
+0x7f0900c2)
+[Current Fragment] :  com.gaurav.avnc.Experimental
+[+] find a new screen:  f64fd1f50d8e3c1f485fee41286ae7fd
+[+] PC get shoot:  f64fd1f50d8e3c1f485fee41286ae7fd.png
+[+] get shot:  /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/screenshot/f64fd1f50d8e3c1f485fee41286ae7fd.png
+Activity Screen
+screen.rescommand [<uiautomator2._selector.UiObject object at 0x7f4ff9ce8c40>, <uiautomator2._selector.UiObject object at 0x7f4ff66bd790>, <uiautomator2._selector.UiObject object at 0x7f4ff9cd5910>, <uiautomator2._selector.UiObject object at 0x7f4ff66bdb20>]
+rescommand [<uiautomator2._selector.UiObject object at 0x7f4ff9ce8c40>, <uiautomator2._selector.UiObject object at 0x7f4ff66bd790>, <uiautomator2._selector.UiObject object at 0x7f4ff9cd5910>, <uiautomator2._selector.UiObject object at 0x7f4ff66bdb20>, <uiautomator2._selector.UiObject object at 0x7f4ff66ab9d0>]
+[+] Build New Screen Successful!
+============ screen object ============
+[vector] :  f64fd1f50d8e3c1f485fee41286ae7fd
+[parentScreen] :  
+[Activity] :  com.gaurav.avnc.ui.prefs.PrefsActivity
+[adb] :  timeout 20s adb -s 86219b420804 shell am start -S -n com.gaurav.avnc/com.gaurav.avnc.ui.prefs.PrefsActivity -a zxy -c zxy -W
+[fragment] :  
+[next-ragment] :  
+[newfrag] :  False
+[rescommand] : 
+=======================================
+[+] run :  f64fd1f50d8e3c1f485fee41286ae7fd
+[+] Screen ACT:  com.gaurav.avnc.ui.prefs.PrefsActivity
+Find Target Widget
+[PARSE TARGET]
+[ACTIVITY] :  com.gaurav.avnc.ui.prefs.PrefsActivity
+[Target Widget] :  []
+Build init Widget
+======== wdiget stack ========
+{'bounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '转到上一层级', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 507, 'left': 0, 'right': 1080, 'top': 240}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 507, 'left': 0, 'right': 1080, 'top': 240}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 725, 'left': 0, 'right': 1080, 'top': 507}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 725, 'left': 0, 'right': 1080, 'top': 507}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+==============================
+[++++++++++++++++++]
+restartScreen
+[+] start Act !
+{'bounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '转到上一层级', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '转到上一层级', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+[+] start widget_command !
+{'bounds': {'bottom': 725, 'left': 0, 'right': 1080, 'top': 507}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 725, 'left': 0, 'right': 1080, 'top': 507}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+[+] widget click
+Alive Package
+[CURRENT ACT]:  .ui.prefs.PrefsActivity
+[get current frag]
+[CMD] :  adb -s 86219b420804 shell dumpsys activity top
+Experimental
+0x7f0900c2)
+[Current Fragment] :  com.gaurav.avnc.Experimental
+[-] Screen is old:  f64fd1f50d8e3c1f485fee41286ae7fd
+[++++++++++++++++++]
+restartScreen
+[+] start Act !
+{'bounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '转到上一层级', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '转到上一层级', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+[+] start widget_command !
+{'bounds': {'bottom': 507, 'left': 0, 'right': 1080, 'top': 240}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 507, 'left': 0, 'right': 1080, 'top': 240}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+[+] widget click
+Alive Package
+[CURRENT ACT]:  .ui.prefs.PrefsActivity
+[get current frag]
+[CMD] :  adb -s 86219b420804 shell dumpsys activity top
+Experimental
+0x7f0900c2)
+[Current Fragment] :  com.gaurav.avnc.Experimental
+[-] Screen is old:  f64fd1f50d8e3c1f485fee41286ae7fd
+[++++++++++++++++++]
+restartScreen
+[+] start Act !
+{'bounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '转到上一层级', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '转到上一层级', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+[+] start widget_command !
+{'bounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '转到上一层级', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+[+] widget click
+Alive Package
+[CURRENT ACT]:  .ui.prefs.PrefsActivity
+[get current frag]
+[CMD] :  adb -s 86219b420804 shell dumpsys activity top
+Main
+0x7f0900c2)
+[Current Fragment] :  com.gaurav.avnc.Main
+[+] find a new screen:  9d16993990b3e447cc623fdc3daad50a
+[+] PC get shoot:  9d16993990b3e447cc623fdc3daad50a.png
+[+] get shot:  /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/screenshot/9d16993990b3e447cc623fdc3daad50a.png
+Activity Screen
+screen.rescommand [<uiautomator2._selector.UiObject object at 0x7f4ff9ce8c40>, <uiautomator2._selector.UiObject object at 0x7f4ff66bd790>, <uiautomator2._selector.UiObject object at 0x7f4ff9cd5910>, <uiautomator2._selector.UiObject object at 0x7f4ff66bdb20>, <uiautomator2._selector.UiObject object at 0x7f4ff66ab9d0>]
+rescommand [<uiautomator2._selector.UiObject object at 0x7f4ff9ce8c40>, <uiautomator2._selector.UiObject object at 0x7f4ff66bd790>, <uiautomator2._selector.UiObject object at 0x7f4ff9cd5910>, <uiautomator2._selector.UiObject object at 0x7f4ff66bdb20>, <uiautomator2._selector.UiObject object at 0x7f4ff66ab9d0>, <uiautomator2._selector.UiObject object at 0x7f4ff66c2400>]
+[+] Build New Screen Successful!
+============ screen object ============
+[vector] :  9d16993990b3e447cc623fdc3daad50a
+[parentScreen] :  
+[Activity] :  com.gaurav.avnc.ui.prefs.PrefsActivity
+[adb] :  timeout 20s adb -s 86219b420804 shell am start -S -n com.gaurav.avnc/com.gaurav.avnc.ui.prefs.PrefsActivity -a zxy -c zxy -W
+[fragment] :  
+[next-ragment] :  
+[newfrag] :  False
+[rescommand] : 
+{'bounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '转到上一层级', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '转到上一层级', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '转到上一层级', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+=======================================
+[+] run :  9d16993990b3e447cc623fdc3daad50a
+[+] Screen ACT:  com.gaurav.avnc.ui.prefs.PrefsActivity
+Find Target Widget
+[PARSE TARGET]
+[ACTIVITY] :  com.gaurav.avnc.ui.prefs.PrefsActivity
+[Target Widget] :  []
+Build init Widget
+======== wdiget stack ========
+{'bounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '转到上一层级', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 458, 'left': 0, 'right': 1080, 'top': 240}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 458, 'left': 0, 'right': 1080, 'top': 240}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 676, 'left': 0, 'right': 1080, 'top': 458}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 676, 'left': 0, 'right': 1080, 'top': 458}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 894, 'left': 0, 'right': 1080, 'top': 676}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 894, 'left': 0, 'right': 1080, 'top': 676}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 1112, 'left': 0, 'right': 1080, 'top': 894}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1112, 'left': 0, 'right': 1080, 'top': 894}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 1330, 'left': 0, 'right': 1080, 'top': 1112}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1330, 'left': 0, 'right': 1080, 'top': 1112}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+==============================
+[++++++++++++++++++]
+restartScreen
+[+] start Act !
+{'bounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '转到上一层级', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '转到上一层级', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '转到上一层级', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+[+] start widget_command !
+{'bounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+[+] widget click
+Alive Package
+[CURRENT ACT]:  .ui.prefs.PrefsActivity
+[get current frag]
+[CMD] :  adb -s 86219b420804 shell dumpsys activity top
+Experimental
+0x7f0900c2)
+[Current Fragment] :  com.gaurav.avnc.Experimental
+[+] find a new screen:  f64fd1f50d8e3c1f485fee41286ae7fd
+[+] PC get shoot:  f64fd1f50d8e3c1f485fee41286ae7fd.png
+[+] get shot:  /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/screenshot/f64fd1f50d8e3c1f485fee41286ae7fd.png
+Activity Screen
+screen.rescommand [<uiautomator2._selector.UiObject object at 0x7f4ff9ce8c40>, <uiautomator2._selector.UiObject object at 0x7f4ff66bd790>, <uiautomator2._selector.UiObject object at 0x7f4ff9cd5910>, <uiautomator2._selector.UiObject object at 0x7f4ff66bdb20>, <uiautomator2._selector.UiObject object at 0x7f4ff66ab9d0>, <uiautomator2._selector.UiObject object at 0x7f4ff66c2400>]
+rescommand [<uiautomator2._selector.UiObject object at 0x7f4ff9ce8c40>, <uiautomator2._selector.UiObject object at 0x7f4ff66bd790>, <uiautomator2._selector.UiObject object at 0x7f4ff9cd5910>, <uiautomator2._selector.UiObject object at 0x7f4ff66bdb20>, <uiautomator2._selector.UiObject object at 0x7f4ff66ab9d0>, <uiautomator2._selector.UiObject object at 0x7f4ff66c2400>, <uiautomator2._selector.UiObject object at 0x7f4ff6661220>]
+[+] Build New Screen Successful!
+============ screen object ============
+[vector] :  f64fd1f50d8e3c1f485fee41286ae7fd
+[parentScreen] :  
+[Activity] :  com.gaurav.avnc.ui.prefs.PrefsActivity
+[adb] :  timeout 20s adb -s 86219b420804 shell am start -S -n com.gaurav.avnc/com.gaurav.avnc.ui.prefs.PrefsActivity -a zxy -c zxy -W
+[fragment] :  
+[next-ragment] :  
+[newfrag] :  False
+[rescommand] : 
+=======================================
+[+] run :  f64fd1f50d8e3c1f485fee41286ae7fd
+[+] Screen ACT:  com.gaurav.avnc.ui.prefs.PrefsActivity
+Find Target Widget
+[PARSE TARGET]
+[ACTIVITY] :  com.gaurav.avnc.ui.prefs.PrefsActivity
+[Target Widget] :  []
+Build init Widget
+======== wdiget stack ========
+{'bounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '转到上一层级', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 507, 'left': 0, 'right': 1080, 'top': 240}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 507, 'left': 0, 'right': 1080, 'top': 240}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 725, 'left': 0, 'right': 1080, 'top': 507}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 725, 'left': 0, 'right': 1080, 'top': 507}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+==============================
+[++++++++++++++++++]
+restartScreen
+[+] start Act !
+{'bounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '转到上一层级', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '转到上一层级', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '转到上一层级', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+[+] start widget_command !
+{'bounds': {'bottom': 725, 'left': 0, 'right': 1080, 'top': 507}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 725, 'left': 0, 'right': 1080, 'top': 507}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+[+] widget click
+Alive Package
+[CURRENT ACT]:  .ui.prefs.PrefsActivity
+[get current frag]
+[CMD] :  adb -s 86219b420804 shell dumpsys activity top
+Experimental
+0x7f0900c2)
+[Current Fragment] :  com.gaurav.avnc.Experimental
+[-] Screen is old:  f64fd1f50d8e3c1f485fee41286ae7fd
+[++++++++++++++++++]
+restartScreen
+[+] start Act !
+{'bounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '转到上一层级', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '转到上一层级', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '转到上一层级', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+[+] start widget_command !
+{'bounds': {'bottom': 507, 'left': 0, 'right': 1080, 'top': 240}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 507, 'left': 0, 'right': 1080, 'top': 240}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+[+] widget click
+Alive Package
+[CURRENT ACT]:  .ui.prefs.PrefsActivity
+[get current frag]
+[CMD] :  adb -s 86219b420804 shell dumpsys activity top
+Experimental
+0x7f0900c2)
+[Current Fragment] :  com.gaurav.avnc.Experimental
+[-] Screen is old:  f64fd1f50d8e3c1f485fee41286ae7fd
+[++++++++++++++++++]
+restartScreen
+[+] start Act !
+{'bounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '转到上一层级', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '转到上一层级', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '转到上一层级', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+[+] start widget_command !
+{'bounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '转到上一层级', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+[+] widget click
+Alive Package
+[CURRENT ACT]:  .ui.prefs.PrefsActivity
+[get current frag]
+[CMD] :  adb -s 86219b420804 shell dumpsys activity top
+Main
+0x7f0900c2)
+[Current Fragment] :  com.gaurav.avnc.Main
+[+] find a new screen:  9d16993990b3e447cc623fdc3daad50a
+[+] PC get shoot:  9d16993990b3e447cc623fdc3daad50a.png
+[+] get shot:  /home/syc/Downloads/DEV/rebuild/result/com.gaurav.avnc-14/screenshot/9d16993990b3e447cc623fdc3daad50a.png
+Activity Screen
+screen.rescommand [<uiautomator2._selector.UiObject object at 0x7f4ff9ce8c40>, <uiautomator2._selector.UiObject object at 0x7f4ff66bd790>, <uiautomator2._selector.UiObject object at 0x7f4ff9cd5910>, <uiautomator2._selector.UiObject object at 0x7f4ff66bdb20>, <uiautomator2._selector.UiObject object at 0x7f4ff66ab9d0>, <uiautomator2._selector.UiObject object at 0x7f4ff66c2400>, <uiautomator2._selector.UiObject object at 0x7f4ff6661220>]
+rescommand [<uiautomator2._selector.UiObject object at 0x7f4ff9ce8c40>, <uiautomator2._selector.UiObject object at 0x7f4ff66bd790>, <uiautomator2._selector.UiObject object at 0x7f4ff9cd5910>, <uiautomator2._selector.UiObject object at 0x7f4ff66bdb20>, <uiautomator2._selector.UiObject object at 0x7f4ff66ab9d0>, <uiautomator2._selector.UiObject object at 0x7f4ff66c2400>, <uiautomator2._selector.UiObject object at 0x7f4ff6661220>, <uiautomator2._selector.UiObject object at 0x7f4ff9cd5b80>]
+[+] Build New Screen Successful!
+============ screen object ============
+[vector] :  9d16993990b3e447cc623fdc3daad50a
+[parentScreen] :  
+[Activity] :  com.gaurav.avnc.ui.prefs.PrefsActivity
+[adb] :  timeout 20s adb -s 86219b420804 shell am start -S -n com.gaurav.avnc/com.gaurav.avnc.ui.prefs.PrefsActivity -a zxy -c zxy -W
+[fragment] :  
+[next-ragment] :  
+[newfrag] :  False
+[rescommand] : 
+{'bounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '转到上一层级', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '转到上一层级', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '转到上一层级', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '转到上一层级', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+=======================================
+[+] run :  9d16993990b3e447cc623fdc3daad50a
+[+] Screen ACT:  com.gaurav.avnc.ui.prefs.PrefsActivity
+Find Target Widget
+[PARSE TARGET]
+[ACTIVITY] :  com.gaurav.avnc.ui.prefs.PrefsActivity
+[Target Widget] :  []
+Build init Widget
+======== wdiget stack ========
+{'bounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '转到上一层级', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 458, 'left': 0, 'right': 1080, 'top': 240}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 458, 'left': 0, 'right': 1080, 'top': 240}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 676, 'left': 0, 'right': 1080, 'top': 458}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 676, 'left': 0, 'right': 1080, 'top': 458}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 894, 'left': 0, 'right': 1080, 'top': 676}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 894, 'left': 0, 'right': 1080, 'top': 676}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 1112, 'left': 0, 'right': 1080, 'top': 894}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1112, 'left': 0, 'right': 1080, 'top': 894}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 1330, 'left': 0, 'right': 1080, 'top': 1112}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1330, 'left': 0, 'right': 1080, 'top': 1112}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+==============================
+[++++++++++++++++++]
+restartScreen
+[+] start Act !
+{'bounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '转到上一层级', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '转到上一层级', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '转到上一层级', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+{'bounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'childCount': 0, 'className': 'android.widget.ImageButton', 'contentDescription': '转到上一层级', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 240, 'left': 0, 'right': 168, 'top': 72}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+[+] start widget_command !
+{'bounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'childCount': 2, 'className': 'android.widget.LinearLayout', 'contentDescription': '', 'packageName': 'com.gaurav.avnc', 'resourceName': None, 'text': '', 'visibleBounds': {'bottom': 1548, 'left': 0, 'right': 1080, 'top': 1330}, 'checkable': False, 'checked': False, 'clickable': True, 'enabled': True, 'focusable': True, 'focused': False, 'longClickable': False, 'scrollable': False, 'selected': False}
+[+] widget click
+======================================
+[-] Run Fault!
+======================================
+[-------------------]
+restartScreen
+======================================
+[-] Run Fault!
+======================================
+[-------------------]
+restartScreen
+======================================
+[-] Run Fault!
+======================================
+[-------------------]
+restartScreen
+======================================
+[-] Run Fault!
+======================================
+[-------------------]
+restartScreen
+======================================
+[-] Run Fault!
+======================================
+[-------------------]
+restartScreen
+======================================
+[-] Run Fault!
+======================================
+[-------------------]
+restartScreen
+======================================
+[-] Run Fault!
+======================================
+[-------------------]
+restartScreen
+======================================
+[-] Run Fault!
+======================================
+[-------------------]
+restartScreen
+============  NEW START ACTIVITY ============
+[START ACTIVITY]:  com.gaurav.avnc.ui.prefs.PrefsActivity
+[component]:  com.gaurav.avnc/com.gaurav.avnc.ui.prefs.PrefsActivity
+[+] Find component json
+[-] DON'T GET EXTRAS
+[cmd]:  timeout 20s adb -s 86219b420804 shell am start -S -n com.gaurav.avnc/com.gaurav.avnc.ui.prefs.PrefsActivity -W
+[OTHER]: 
+[['zxy', 'zxy']]
+============  NEW START ACTIVITY ============
+[START ACTIVITY]:  com.gaurav.avnc.ui.about.AboutActivity
+[component]:  com.gaurav.avnc/com.gaurav.avnc.ui.about.AboutActivity
+[action]:  zxy
+[category]:  zxy
+[+] Find component json
+[-] DON'T GET EXTRAS
+[cmd]:  timeout 20s adb -s 86219b420804 shell am start -S -n com.gaurav.avnc/com.gaurav.avnc.ui.about.AboutActivity -a zxy -c zxy -W
+============  NEW START ACTIVITY ============
+[START ACTIVITY]:  com.gaurav.avnc.ui.about.AboutActivity
+[component]:  com.gaurav.avnc/com.gaurav.avnc.ui.about.AboutActivity
+[+] Find component json
+[-] DON'T GET EXTRAS
+[cmd]:  timeout 20s adb -s 86219b420804 shell am start -S -n com.gaurav.avnc/com.gaurav.avnc.ui.about.AboutActivity -W
+[OTHER]: 
+[['zxy', 'zxy'], ['android.intent.action.VIEW', 'android.intent.category.BROWSABLE, android.intent.category.DEFAULT'], ['zxy', 'zxy']]
+============  NEW START ACTIVITY ============
+[START ACTIVITY]:  com.gaurav.avnc.ui.vnc.UriReceiverActivity
+[component]:  com.gaurav.avnc/com.gaurav.avnc.ui.vnc.UriReceiverActivity
+[action]:  zxy
+[category]:  zxy
+[+] Find component json
+[-] DON'T GET EXTRAS
+[cmd]:  timeout 20s adb -s 86219b420804 shell am start -S -n com.gaurav.avnc/com.gaurav.avnc.ui.vnc.UriReceiverActivity -a zxy -c zxy -W
+============  NEW START ACTIVITY ============
+[START ACTIVITY]:  com.gaurav.avnc.ui.vnc.UriReceiverActivity
+[component]:  com.gaurav.avnc/com.gaurav.avnc.ui.vnc.UriReceiverActivity
+[action]:  android.intent.action.VIEW
+[category]:  android.intent.category.BROWSABLE, android.intent.category.DEFAULT
+[+] Find component json
+[-] DON'T GET EXTRAS
+[cmd]:  timeout 20s adb -s 86219b420804 shell am start -S -n com.gaurav.avnc/com.gaurav.avnc.ui.vnc.UriReceiverActivity -a android.intent.action.VIEW -c android.intent.category.BROWSABLE, android.intent.category.DEFAULT -W
+============  NEW START ACTIVITY ============
+[START ACTIVITY]:  com.gaurav.avnc.ui.vnc.UriReceiverActivity
+[component]:  com.gaurav.avnc/com.gaurav.avnc.ui.vnc.UriReceiverActivity
+[action]:  zxy
+[category]:  zxy
+[+] Find component json
+[-] DON'T GET EXTRAS
+[cmd]:  timeout 20s adb -s 86219b420804 shell am start -S -n com.gaurav.avnc/com.gaurav.avnc.ui.vnc.UriReceiverActivity -a zxy -c zxy -W
+============  NEW START ACTIVITY ============
+[START ACTIVITY]:  com.gaurav.avnc.ui.vnc.UriReceiverActivity
+[component]:  com.gaurav.avnc/com.gaurav.avnc.ui.vnc.UriReceiverActivity
+[+] Find component json
+[-] DON'T GET EXTRAS
+[cmd]:  timeout 20s adb -s 86219b420804 shell am start -S -n com.gaurav.avnc/com.gaurav.avnc.ui.vnc.UriReceiverActivity -W
+[OTHER]: 
+[['zxy', 'zxy']]
+============  NEW START ACTIVITY ============
+[START ACTIVITY]:  com.gaurav.avnc.ui.vnc.VncActivity
+[component]:  com.gaurav.avnc/com.gaurav.avnc.ui.vnc.VncActivity
+[action]:  zxy
+[category]:  zxy
+[+] Find component json
+[+] GET EXTRAS:  ['']
+[cmd]:  timeout 20s adb -s 86219b420804 shell am start -S -n com.gaurav.avnc/com.gaurav.avnc.ui.vnc.VncActivity -a zxy -c zxy  -W
+============  NEW START ACTIVITY ============
+[START ACTIVITY]:  com.gaurav.avnc.ui.vnc.VncActivity
+[component]:  com.gaurav.avnc/com.gaurav.avnc.ui.vnc.VncActivity
+[+] Find component json
+[+] GET EXTRAS:  ['']
+[cmd]:  timeout 20s adb -s 86219b420804 shell am start -S -n com.gaurav.avnc/com.gaurav.avnc.ui.vnc.VncActivity  -W
+[OTHER]: 
+[['zxy', 'zxy']]
+============  NEW START ACTIVITY ============
+[START ACTIVITY]:  com.gaurav.avnc.ui.home.HomeActivity
+[component]:  com.gaurav.avnc/com.gaurav.avnc.ui.home.HomeActivity
+[action]:  zxy
+[category]:  zxy
+[+] Find component json
+[-] DON'T GET EXTRAS
+[cmd]:  timeout 20s adb -s 86219b420804 shell am start -S -n com.gaurav.avnc/com.gaurav.avnc.ui.home.HomeActivity -a zxy -c zxy -W
+============  NEW START ACTIVITY ============
+[START ACTIVITY]:  com.gaurav.avnc.ui.home.HomeActivity
+[component]:  com.gaurav.avnc/com.gaurav.avnc.ui.home.HomeActivity
+[+] Find component json
+[-] DON'T GET EXTRAS
+[cmd]:  timeout 20s adb -s 86219b420804 shell am start -S -n com.gaurav.avnc/com.gaurav.avnc.ui.home.HomeActivity -W
+[OTHER]: 
+[['zxy', 'zxy'], ['android.intent.action.MAIN', 'android.intent.category.LAUNCHER'], ['zxy', 'zxy']]
+============  NEW START ACTIVITY ============
+[START ACTIVITY]:  com.gaurav.avnc.ui.home.SplashActivity
+[component]:  com.gaurav.avnc/com.gaurav.avnc.ui.home.SplashActivity
+[action]:  zxy
+[category]:  zxy
+[+] Find component json
+[-] DON'T GET EXTRAS
+[cmd]:  timeout 20s adb -s 86219b420804 shell am start -S -n com.gaurav.avnc/com.gaurav.avnc.ui.home.SplashActivity -a zxy -c zxy -W
+============  NEW START ACTIVITY ============
+[START ACTIVITY]:  com.gaurav.avnc.ui.home.SplashActivity
+[component]:  com.gaurav.avnc/com.gaurav.avnc.ui.home.SplashActivity
+[action]:  android.intent.action.MAIN
+[category]:  android.intent.category.LAUNCHER
+[+] Find component json
+[-] DON'T GET EXTRAS
+[cmd]:  timeout 20s adb -s 86219b420804 shell am start -S -n com.gaurav.avnc/com.gaurav.avnc.ui.home.SplashActivity -a android.intent.action.MAIN -c android.intent.category.LAUNCHER -W
+============  NEW START ACTIVITY ============
+[START ACTIVITY]:  com.gaurav.avnc.ui.home.SplashActivity
+[component]:  com.gaurav.avnc/com.gaurav.avnc.ui.home.SplashActivity
+[action]:  zxy
+[category]:  zxy
+[+] Find component json
+[-] DON'T GET EXTRAS
+[cmd]:  timeout 20s adb -s 86219b420804 shell am start -S -n com.gaurav.avnc/com.gaurav.avnc.ui.home.SplashActivity -a zxy -c zxy -W
+============  NEW START ACTIVITY ============
+[START ACTIVITY]:  com.gaurav.avnc.ui.home.SplashActivity
+[component]:  com.gaurav.avnc/com.gaurav.avnc.ui.home.SplashActivity
+[+] Find component json
+[-] DON'T GET EXTRAS
+[cmd]:  timeout 20s adb -s 86219b420804 shell am start -S -n com.gaurav.avnc/com.gaurav.avnc.ui.home.SplashActivity -W
+[+] Successful start Activity:  ['com.gaurav.avnc.ui.home.UrlBarActivity', 'com.gaurav.avnc.ui.prefs.PrefsActivity']
+[-] Fault start Activity:  ['com.gaurav.avnc.ui.prefs.PrefsActivity', 'com.gaurav.avnc.ui.about.AboutActivity', 'com.gaurav.avnc.ui.vnc.UriReceiverActivity', 'com.gaurav.avnc.ui.vnc.VncActivity', 'com.gaurav.avnc.ui.home.HomeActivity', 'com.gaurav.avnc.ui.home.SplashActivity']
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[-] Can't restart activity:  com.gaurav.avnc.ui.prefs.PrefsActivity
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[-] Can't restart activity:  com.gaurav.avnc.ui.about.AboutActivity
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[-] Can't restart activity:  com.gaurav.avnc.ui.vnc.UriReceiverActivity
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[-] Can't restart activity:  com.gaurav.avnc.ui.vnc.VncActivity
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[-] Can't restart activity:  com.gaurav.avnc.ui.home.HomeActivity
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[-] Can't restart activity:  com.gaurav.avnc.ui.home.SplashActivity
+================ Pare Trans ================
+[<structure.screen.screen object at 0x7f4ff669a0d0>, <structure.screen.screen object at 0x7f4ff66abf10>, <structure.screen.screen object at 0x7f4ff9ce8940>, <structure.screen.screen object at 0x7f4ff66b9310>, <structure.screen.screen object at 0x7f4ff9cd5eb0>, <structure.screen.screen object at 0x7f4ff9cd5a30>, <structure.screen.screen object at 0x7f4ff66bde20>, <structure.screen.screen object at 0x7f4ff9cd5850>, <structure.screen.screen object at 0x7f4ff6661eb0>, <structure.screen.screen object at 0x7f4ff6661850>]
+#[SCREEN] :  7e51fa9870cab6f10e80f385e9e42478
+[FATHER ACTIVITY] :  com.gaurav.avnc.ui.home.UrlBarActivity
+#[SCREEN] :  9d16993990b3e447cc623fdc3daad50a
+[FATHER FRAGMENT] :  com.gaurav.avnc.Main
+[+] Get New Son Screen :  f64fd1f50d8e3c1f485fee41286ae7fd
+[SON FRAGMENT] :  com.gaurav.avnc.Experimental
+#[SCREEN] :  f64fd1f50d8e3c1f485fee41286ae7fd
+[FATHER FRAGMENT] :  com.gaurav.avnc.Experimental
+[+] Get New Son Screen :  9d16993990b3e447cc623fdc3daad50a
+[SON FRAGMENT] :  com.gaurav.avnc.Main
+#[SCREEN] :  9d16993990b3e447cc623fdc3daad50a
+[FATHER FRAGMENT] :  com.gaurav.avnc.Main
+[+] Get New Son Screen :  f64fd1f50d8e3c1f485fee41286ae7fd
+[SON FRAGMENT] :  com.gaurav.avnc.Experimental
+#[SCREEN] :  f64fd1f50d8e3c1f485fee41286ae7fd
+[FATHER FRAGMENT] :  com.gaurav.avnc.Experimental
+[+] Get New Son Screen :  9d16993990b3e447cc623fdc3daad50a
+[SON FRAGMENT] :  com.gaurav.avnc.Main
+#[SCREEN] :  9d16993990b3e447cc623fdc3daad50a
+[FATHER FRAGMENT] :  com.gaurav.avnc.Main
+[+] Get New Son Screen :  f64fd1f50d8e3c1f485fee41286ae7fd
+[SON FRAGMENT] :  com.gaurav.avnc.Experimental
+#[SCREEN] :  f64fd1f50d8e3c1f485fee41286ae7fd
+[FATHER FRAGMENT] :  com.gaurav.avnc.Experimental
+[+] Get New Son Screen :  9d16993990b3e447cc623fdc3daad50a
+[SON FRAGMENT] :  com.gaurav.avnc.Main
+#[SCREEN] :  9d16993990b3e447cc623fdc3daad50a
+[FATHER FRAGMENT] :  com.gaurav.avnc.Main
+[+] Get New Son Screen :  f64fd1f50d8e3c1f485fee41286ae7fd
+[SON FRAGMENT] :  com.gaurav.avnc.Experimental
+#[SCREEN] :  f64fd1f50d8e3c1f485fee41286ae7fd
+[FATHER FRAGMENT] :  com.gaurav.avnc.Experimental
+[+] Get New Son Screen :  9d16993990b3e447cc623fdc3daad50a
+[SON FRAGMENT] :  com.gaurav.avnc.Main
+#[SCREEN] :  9d16993990b3e447cc623fdc3daad50a
+[FATHER FRAGMENT] :  com.gaurav.avnc.Main
+========== Project Trans ==========
+[Total]
+com.gaurav.avnc.ui.home.HomeActivity->com.gaurav.avnc.ui.about.AboutActivity
+com.gaurav.avnc.ui.home.UrlBarActivity->com.gaurav.avnc.ui.vnc.VncActivity
+com.gaurav.avnc.Main->com.gaurav.avnc.Experimental
+com.gaurav.avnc.ui.vnc.UriReceiverActivity->com.gaurav.avnc.ui.vnc.VncActivity
+com.gaurav.avnc.ui.home.HomeActivity->com.gaurav.avnc.ui.home.ProfileEditorFragment
+com.gaurav.avnc.ui.prefs.PrefsActivity->com.gaurav.avnc.Main
+com.gaurav.avnc.ui.vnc.VncActivity->com.gaurav.avnc.ui.vnc.HostKeyFragment
+com.gaurav.avnc.ui.home.HomeActivity->com.gaurav.avnc.ui.home.UrlBarActivity
+com.gaurav.avnc.ui.home.HomeActivity->com.gaurav.avnc.ui.prefs.PrefsActivity
+com.gaurav.avnc.ui.vnc.VncActivity->com.gaurav.avnc.ui.vnc.CredentialFragment
+com.gaurav.avnc.Experimental->com.gaurav.avnc.Main
+com.gaurav.avnc.ui.home.SplashActivity->com.gaurav.avnc.ui.home.HomeActivity
+[Screen]
+9d16993990b3e447cc623fdc3daad50a->f64fd1f50d8e3c1f485fee41286ae7fd
+f64fd1f50d8e3c1f485fee41286ae7fd->9d16993990b3e447cc623fdc3daad50a
+[PKG]
+com.gaurav.avnc->com.miui.home

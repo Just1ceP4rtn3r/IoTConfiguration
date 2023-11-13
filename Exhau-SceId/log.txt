@@ -1,0 +1,15 @@
+2023-11-12 23:45:39 798462 [+] We will write mylog messages for here: /home/rooot/Documents/SceneDroid-new/BETA/Exhau-SceId/log.txt
+2023-11-12 23:45:39 798687 [+] Get apks folder: /home/rooot/Documents/SceneDroid-new/BETA/Exhau-SceId/apks
+2023-11-12 23:45:39 798768 [+] Get result folder: /home/rooot/Documents/SceneDroid-new/BETA/Exhau-SceId/result
+2023-11-12 23:45:39 798824 [+] find 1 : ApiDemos-debug.apk
+2023-11-12 23:45:39 798868 [+] Total apks: 1
+2023-11-12 23:45:42 482258 [new_icc_res] : /home/rooot/Documents/SceneDroid-new/BETA/Exhau-SceId/result/io.appium.android.apis-18/iccbot/ApiDemos-debug
+2023-11-12 23:45:42 482362 [iccbot_dir] : /home/rooot/Documents/SceneDroid-new/BETA/Exhau-SceId/enhance/icc
+2023-11-12 23:45:42 482391 [apks_dir] : /home/rooot/Documents/SceneDroid-new/BETA/Exhau-SceId/result/io.appium.android.apis-18/unpack/dist
+2023-11-12 23:45:42 482411 [apk_name] : ApiDemos-debug.apk
+2023-11-12 23:45:42 482457 [iccjar_path] : /home/rooot/Documents/SceneDroid-new/BETA/Exhau-SceId/enhance/icc/ICCBot.jar
+2023-11-12 23:45:42 482482 [androidJar] : /home/rooot/Documents/SceneDroid-new/BETA/Exhau-SceId/enhance/icc/lib/platforms
+2023-11-12 23:45:42 482548 [outputDir] : /home/rooot/Documents/SceneDroid-new/BETA/Exhau-SceId/result/io.appium.android.apis-18/iccbot
+2023-11-12 23:45:42 485929 timeout 13m java -jar -Xmx6g /home/rooot/Documents/SceneDroid-new/BETA/Exhau-SceId/enhance/icc/ICCBot.jar  -path /home/rooot/Documents/SceneDroid-new/BETA/Exhau-SceId/result/io.appium.android.apis-18/unpack/dist  -name ApiDemos-debug.apk  -androidJar  /home/rooot/Documents/SceneDroid-new/BETA/Exhau-SceId/enhance/icc/lib/platforms  -time  10  -maxPathNumber  1000  -client CTGClient  -outputDir /home/rooot/Documents/SceneDroid-new/BETA/Exhau-SceId/result/io.appium.android.apis-18/iccbot 
+2023-11-12 23:45:42 487672 timeout 13m java -jar -Xmx6g /home/rooot/Documents/SceneDroid-new/BETA/Exhau-SceId/enhance/icc/ICCBot.jar  -path /home/rooot/Documents/SceneDroid-new/BETA/Exhau-SceId/result/io.appium.android.apis-18/unpack/dist  -name ApiDemos-debug.apk  -androidJar  /home/rooot/Documents/SceneDroid-new/BETA/Exhau-SceId/enhance/icc/lib/platforms  -time  10  -maxPathNumber  1000  -client IROutputClient  -outputDir /home/rooot/Documents/SceneDroid-new/BETA/Exhau-SceId/result/io.appium.android.apis-18/iccbot 
+2023-11-12 23:45:42 489221 timeout 13m java -jar -Xmx6g /home/rooot/Documents/SceneDroid-new/BETA/Exhau-SceId/enhance/icc/ICCBot.jar  -path /home/rooot/Documents/SceneDroid-new/BETA/Exhau-SceId/result/io.appium.android.apis-18/unpack/dist  -name ApiDemos-debug.apk  -androidJar  /home/rooot/Documents/SceneDroid-new/BETA/Exhau-SceId/enhance/icc/lib/platforms  -time  10  -maxPathNumber  1000  -client ICCSpecClient  -outputDir /home/rooot/Documents/SceneDroid-new/BETA/Exhau-SceId/result/io.appium.android.apis-18/iccbot 
